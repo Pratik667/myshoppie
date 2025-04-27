@@ -1,7 +1,11 @@
 import React from "react";
 
-const ProductsDetail = () => {
-    return(<>Product Detail Page;</>)
+const ProductsDetail = ({productdata}) => {
+
+    return(<>
+    {productdata._id}
+    Product Detail Page;
+    </>)
 }
 
 export default ProductsDetail;
