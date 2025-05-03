@@ -1,7 +1,7 @@
 import React from "react";
-import MUIRangeSlider from './MUIRangeSlider';
-import HomeHero from './HomeHero';
-import OnePlusHero from './BrandHero/OnePlusHero';
+import MUIRangeSlider from '../BrandHero/MUIRangeSlider';
+import HomeHero from '../BrandHero/HomeHero';
+import OnePlusHero from '../BrandHero/OnePlusHero';
 
 const Home = () => {
     return (

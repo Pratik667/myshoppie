@@ -3,29 +3,21 @@ import { Box } from '@mui/material';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Link } from 'react-router-dom';
-import useIsMobile from './useIsMobile';
+import useIsMobile from '../useIsMobile';
 
 const MUIRangeSlider = () => {
     const images = [
         {
+            link: '/products?category=electronics',
+           desktopimg: 'https://inhouse-eshop.t3.storage.dev/desktop-1.png',
+           tabimg: 'https://inhouse-eshop.t3.storage.dev/tab-1.png',
+           mobileimg: 'https://inhouse-eshop.t3.storage.dev/mobile-1.png',
+         },
+        {
           link: '/products?category=clothes',
-          desktopimg: 'https://nobero.com/cdn/shop/files/175.jpg?v=1738312472',
-          mobileimg: 'https://nobero.com/cdn/shop/files/196.jpg?v=1738312464&width=720',
-        },
-        {
-            link: '/products?category=clothes',
-          desktopimg: 'https://nobero.com/cdn/shop/files/177.jpg?v=1738312471',
-          mobileimg: 'https://nobero.com/cdn/shop/files/WhatsApp_Image_2025-03-25_at_7.36.14_PM_3.jpg?v=1742914223&width=720',
-        },
-        {
-           link: '/products?event=sale',
-          desktopimg: 'https://inhouse-eshop.fly.storage.tigris.dev/desktop-3.jpg',
-          mobileimg: 'https://inhouse-eshop.fly.storage.tigris.dev/desktop-3.jpg',
-        },
-        {
-            link: '/products?category=clothes',
-          desktopimg: 'https://nobero.com/cdn/shop/files/WhatsApp_Image_2025-03-25_at_7.36.14_PM_2.jpg?v=1742914224',
-          mobileimg: 'https://nobero.com/cdn/shop/files/Mobile_-_Homepage_Banners-35.jpg?v=1742983769&width=720',
+          desktopimg: 'https://inhouse-eshop.t3.storage.dev/desktop-2.png',
+          tabimg: 'https://inhouse-eshop.t3.storage.dev/tab-2.png',
+          mobileimg: 'https://inhouse-eshop.t3.storage.dev/mobile-2.png',
         },
       ];
       

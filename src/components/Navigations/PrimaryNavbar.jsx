@@ -1,6 +1,6 @@
 import React from 'react';
 import { AppBar, Box, Toolbar, IconButton, InputBase, BottomNavigation, BottomNavigationAction } from '@mui/material';
-import logo from '../assets/logo.svg';
+import logo from '../../assets/logo.svg';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import SearchIcon from '@mui/icons-material/Search';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';

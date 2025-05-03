@@ -1,9 +1,9 @@
 import React from 'react';
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
-
+import {Link} from 'react-router-dom';
 const ProductCard = ({product}) => {
     return (
-        <div className='product-card'>
+        <Link to={`/pdp`} state={{ productdata: product }}className='product-card' >
             <div className='product-image-box'><img className='product-image' src={product.image} /></div>
             <h3 className='product-title'>
                 {product.name}
@@ -11,7 +11,7 @@ const ProductCard = ({product}) => {
             <span className='product-price'>
                <CurrencyRupeeIcon/> {product.price}
             </span>
-        </div>
+        </Link>
     )
 }
 

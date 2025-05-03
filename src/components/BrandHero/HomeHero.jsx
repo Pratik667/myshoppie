@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from "axios"; 
-import ProductCard from "./ProductCard";
-import useIsMobile from './useIsMobile';
+import ProductCard from "../ProductsMain/ProductCard";
+import useIsMobile from '../useIsMobile';
 import { Link } from 'react-router-dom';
 
 const HomeHero = ({title, type, value}) => {
