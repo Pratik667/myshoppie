@@ -40,3 +40,17 @@
 .read-the-docs {
   color: #888;
 }
+
+
+.loader-container {
+  display: block;
+  /* justify-content: center;
+  align-items: center; */
+  margin: auto;
+  /* height: 100px; Adjust the height */
+}
+
+.loader {
+  width: 500px; /* Adjust size */
+  height: 100%;
+}
