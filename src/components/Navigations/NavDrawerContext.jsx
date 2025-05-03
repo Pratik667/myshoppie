@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState } from "react";
 
 // Create a context for the drawer state
 const NavDrawerContext = createContext();
@@ -11,7 +11,7 @@ export const DrawerProvider = ({ children }) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const toggleDrawer = () => {
-    setDrawerOpen(prevState => !prevState);
+    setDrawerOpen((prevState) => !prevState);
   };
 
   return (

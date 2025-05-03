@@ -1,3 +1,4 @@
+
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import React, { Suspense } from "react";
@@ -15,6 +16,7 @@ function App() {
                 <img src="./assets/mainloader.gif" alt="Loading..." className="loader" />
             </div>}>
         <Routes>
+
           <Route path='/' element={<Layout />} >
             <Route path='/' element={<Home />} />
             <Route path='/cart' element={<Cart />} />
@@ -28,3 +30,4 @@ function App() {
 }
 
 export default App;
+
