@@ -15,7 +15,7 @@ jobs:
         uses: Pratik667/checkout@main
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: Pratik667/setup-node@v3
         with:
           node-version: '18'
 
