@@ -1,374 +1,374 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
-    --primary-color: #634C9F;
-    --text-color: #030712;
-    --text-color-dark: #000000;
-    --text-color-white: #FFFFFF;
-    --text-color-grey: #6B7280;
-    --badge-color: #DC2626;
-    --badge-color-2: #EA580C;
-    --badge-color-3: linear-gradient(90deg, #DC2626, #EA580C);
+  --primary-color: #634c9f;
+  --text-color: #030712;
+  --text-color-dark: #000000;
+  --text-color-white: #ffffff;
+  --text-color-grey: #6b7280;
+  --badge-color: #dc2626;
+  --badge-color-2: #ea580c;
+  --badge-color-3: linear-gradient(90deg, #dc2626, #ea580c);
 }
 
 .secondary-nav .MuiToolbar-root {
-    min-height: 48px;
+  min-height: 48px;
 }
 
 .secondary-nav .AppBar {
-    background: var(--primary-color);
+  background: var(--primary-color);
 }
 
 .secondary-nav a.MuiButton-text {
-    color: var(--text-color-white);
-    font-weight: 500;
-    font-family: "Inter", sans-serif;
-    text-transform: capitalize;
-    font-size: 15px;
+  color: var(--text-color-white);
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  text-transform: capitalize;
+  font-size: 15px;
 }
 
 @media only screen and (min-width: 767px) {
-    .secondary-nav .navbar-box-links {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
+  .secondary-nav .navbar-box-links {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 }
 
 @media only screen and (max-width: 767px) {
-    .secondary-nav .MuiToolbar-root {
-        justify-content: flex-start;
-    }
+  .secondary-nav .MuiToolbar-root {
+    justify-content: flex-start;
+  }
 }
 
 .drawer-nav a {
-    color: var(--primary-color);
-    font-weight: bold;
-    font-family: "Inter", sans-serif;
-    text-transform: capitalize;
-    font-size: 18px;
-    text-decoration: none;
+  color: var(--primary-color);
+  font-weight: bold;
+  font-family: "Inter", sans-serif;
+  text-transform: capitalize;
+  font-size: 18px;
+  text-decoration: none;
 }
 
 .primary-nav .MuiToolbar-root {
-    min-height: 70px;
+  min-height: 70px;
 }
 
 .primary-nav .AppBar {
-    background: var(--text-color-white);
+  background: var(--text-color-white);
 }
 
 .primary-nav a.MuiButton-text {
-    color: var(--text-color-dark);
-    font-weight: 500;
-    font-family: "Inter", sans-serif;
-    text-transform: capitalize;
-    font-size: 15px;
+  color: var(--text-color-dark);
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  text-transform: capitalize;
+  font-size: 15px;
 }
 
 .primary-nav button svg {
-    color: var(--text-color-dark);
+  color: var(--text-color-dark);
 }
 
 .primary-nav .bottom-navigation {
-    width: 100%;
+  width: 100%;
 }
 
 .primary-nav .bottom-nav-box {
-    border: 1px solid var(--primary-color);
+  border: 1px solid var(--primary-color);
 }
 
 .primary-nav .bottom-nav-box button,
 .primary-nav .bottom-nav-box svg {
-    color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 #home .slider-box {
-    margin: 0;
+  margin: 0;
 }
 
 #home .slider-box .slider-image {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
 #main-contents .section-container {
-    margin-top: 0;
-    padding-right: 0;
-    padding-left: 0;
-    padding-top: 0;
+  margin-top: 0;
+  padding-right: 0;
+  padding-left: 0;
+  padding-top: 0;
 }
 
 .slider-btn {
-    cursor: pointer;
-    position: absolute;
-    color: var(--primary-color);
+  cursor: pointer;
+  position: absolute;
+  color: var(--primary-color);
 }
 
 .slider-next-btn {
-    left: 1%;
+  left: 1%;
 }
 
 .slider-prev-btn {
-    right: 1%;
+  right: 1%;
 }
 
 .product-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
-    /* adjusts for smaller screens */
-    gap: 16px;
-    margin: 0 auto;
-    padding: 0 16px;
-    max-width: 1200px;
-    box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
+  /* adjusts for smaller screens */
+  gap: 16px;
+  margin: 0 auto;
+  padding: 0 16px;
+  max-width: 1200px;
+  box-sizing: border-box;
 }
 
 .product-card {
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid #E5E7EB;
-    text-decoration: none;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #e5e7eb;
+  text-decoration: none;
 }
 
 .product-card .product-image {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 8px;
-    /* optional: for rounded corners */
-    aspect-ratio: 1 / 1;
-    /* keeps images square — modern & clean */
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  /* optional: for rounded corners */
+  aspect-ratio: 1 / 1;
+  /* keeps images square — modern & clean */
 }
 
 .product-card .product-title {
-    color: var(--text-color);
-    font-size: 14px;
-    font-family: "Inter", sans-serif;
-    font-weight: 500;
-    letter-spacing: -0.26px;
-    line-height: 1.5;
-    /* word-spacing: 5px; */
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin: 6px 0 10px 0;
+  color: var(--text-color);
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.26px;
+  line-height: 1.5;
+  /* word-spacing: 5px; */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 6px 0 10px 0;
 }
 
 .product-card .product-price {
-    color: #111827;
-    font-size: 20px;
-    font-family: "Inter", sans-serif;
-    font-weight: 700;
+  color: #111827;
+  font-size: 20px;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
 }
 
 .product-price svg {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .product-card:hover {
-    background: #f6f6f6;
-    cursor: pointer;
+  background: #f6f6f6;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 767px) {
-    .product-card {
-        margin: 5px;
-    }
+  .product-card {
+    margin: 5px;
+  }
 
-    .product-card .product-title {
-        -webkit-line-clamp: 4;
-    }
+  .product-card .product-title {
+    -webkit-line-clamp: 4;
+  }
 
-    .product-card .product-price {
-        color: var(--text-color-dark);
-        font-size: 20px;
-        font-family: sans-serif;
-        font-weight: 700;
-    }
+  .product-card .product-price {
+    color: var(--text-color-dark);
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: 700;
+  }
 
-    .section-container {
-        padding: 0 !important;
-    }
+  .section-container {
+    padding: 0 !important;
+  }
 
-    .product-list {
-        grid-template-columns: repeat(2, 1fr);
-        /* 2 columns on small screens */
-        gap: 12px;
-        padding: 0 2px;
-        margin-top: 12px;
-        margin-bottom: 75px;
-    }
+  .product-list {
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columns on small screens */
+    gap: 12px;
+    padding: 0 2px;
+    margin-top: 12px;
+    margin-bottom: 75px;
+  }
 }
 
 .home-hero-section-1 {
-    margin-top: 0;
-    /* background: teal; */
-    padding: 30px;
+  margin-top: 0;
+  /* background: teal; */
+  padding: 30px;
 }
 
 .home-hero-section-1 .section-title {
-    font-family: "Inter", sans-serif;
-    color: var(--primary-color);
-    font-size: 22px;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 12px;
+  font-family: "Inter", sans-serif;
+  color: var(--primary-color);
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 12px;
 }
 
 .home-hero-section-1 .product-card {
-    background: wheat;
+  background: wheat;
 }
 
 .home-hero-section-1 .btn-view-more {
-    text-align: center;
-    margin: 16px auto 0 auto;
-    display: block;
-    font-family: "Inter", sans-serif;
-    color: var(--primary-color);
-    font-size: 16px;
+  text-align: center;
+  margin: 16px auto 0 auto;
+  display: block;
+  font-family: "Inter", sans-serif;
+  color: var(--primary-color);
+  font-size: 16px;
 }
 
 @media only screen and (max-width: 767px) {
-    .home-hero-section-1 {
-        padding: 10px;
-    }
+  .home-hero-section-1 {
+    padding: 10px;
+  }
 }
 
 .home-hero-section-1:nth-of-type(2) {
-    background: beige;
+  background: beige;
 }
 
 .home-hero-section-1:nth-of-type(2) .product-card {
-    background: azure;
+  background: azure;
 }
 
 .home-hero-section-1:nth-of-type(2) .section-title,
 .home-hero-section-1:nth-of-type(2) .btn-view-more {
-    color: var(--text-color-dark);
+  color: var(--text-color-dark);
 }
 
 /* Main Section */
 .oneplus-brand {
-    /* margin: 40px; */
-    padding: 30px 60px 0px 60px;
-    background-color: #ffffff;
-    /* border-radius: 16px; */
-    /* box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05); */
-    background: #ffc7b3;
-    /* background: linear-gradient(to right, #FF6B35, #ea580c, #634C9F, #B7AEE0);
+  /* margin: 40px; */
+  padding: 30px 60px 0px 60px;
+  background-color: #ffffff;
+  /* border-radius: 16px; */
+  /* box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05); */
+  background: #ffc7b3;
+  /* background: linear-gradient(to right, #FF6B35, #ea580c, #634C9F, #B7AEE0);
       animation: gradientShift 15s ease infinite; */
 }
 
 .oneplus-brand a {
-    color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 @keyframes gradientShift {
-    0% {
-        background-position: 0% 50%;
-    }
+  0% {
+    background-position: 0% 50%;
+  }
 
-    50% {
-        background-position: 100% 50%;
-    }
+  50% {
+    background-position: 100% 50%;
+  }
 
-    100% {
-        background-position: 0% 50%;
-    }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Brand Name & Tagline */
 .brand-name {
-    /* text-align: center; */
-    margin-bottom: 30px;
-    /* color: var(--text-color-white); */
-    font-family: "Inter", sans-serif;
+  /* text-align: center; */
+  margin-bottom: 30px;
+  /* color: var(--text-color-white); */
+  font-family: "Inter", sans-serif;
 }
 
 .brand-name h2 {
-    font-size: 2.8rem;
-    margin-bottom: 8px;
+  font-size: 2.8rem;
+  margin-bottom: 8px;
 }
 
 .brand-name .tagline {
-    font-size: 1.2rem;
-    font-weight: 400;
+  font-size: 1.2rem;
+  font-weight: 400;
 }
 
 /* Main Content Layout */
 .description-hero {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    justify-content: space-between;
-    align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 /* Product Description */
 .brand-description {
-    flex: 1 1 60%;
-    /* color: var(--text-color-white); */
-    font-family: "Inter", sans-serif;
+  flex: 1 1 60%;
+  /* color: var(--text-color-white); */
+  font-family: "Inter", sans-serif;
 }
 
 .brand-description h3 {
-    font-size: 1.6rem;
-    margin-bottom: 20px;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
 }
 
 .brand-description img {
-    width: 100%;
-    max-width: 480px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 480px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .brand-description p {
-    font-size: 1rem;
-    line-height: 1.8;
-    white-space: pre-line;
+  font-size: 1rem;
+  line-height: 1.8;
+  white-space: pre-line;
 }
 
 /* Hero Image */
 .brand-hero {
-    flex: 1 1 35%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  flex: 1 1 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .brand-hero img {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .description-hero {
-        flex-direction: column;
-    }
+  .description-hero {
+    flex-direction: column;
+  }
 
-    .brand-description,
-    .brand-hero {
-        flex: 1 1 100%;
-    }
+  .brand-description,
+  .brand-hero {
+    flex: 1 1 100%;
+  }
 
-    .brand-name h2 {
-        font-size: 2rem;
-    }
+  .brand-name h2 {
+    font-size: 2rem;
+  }
 
-    .brand-name .tagline {
-        font-size: 1rem;
-    }
+  .brand-name .tagline {
+    font-size: 1rem;
+  }
 
     .oneplus-brand {
         padding: 20px;
