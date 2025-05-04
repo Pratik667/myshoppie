@@ -370,11 +370,11 @@
     font-size: 1rem;
   }
 
-    .oneplus-brand {
-        padding: 20px;
-    }
+  .oneplus-brand {
+    padding: 20px;
+  }
 }
 
-.desktop-nav-icons svg{
-    color: var(--primary-color);
+.desktop-nav-icons svg {
+  color: var(--primary-color);
 }
