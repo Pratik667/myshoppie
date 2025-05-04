@@ -3,15 +3,14 @@ import { Navigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 
 const PrivateRoute = ({ children }) => {
-
   // Check if the JWT is in localStorage
   const token = localStorage.getItem("jwt");
-  if(!token){
+  if (!token) {
     return <Navigate to="/login" />;
   }
   const decoded = jwtDecode(token);
-  if (!(Math.floor(Date.now() / 1000) < decoded.exp)) { 
-    localStorage.removeItem('jwt');
+  if (!(Math.floor(Date.now() / 1000) < decoded.exp)) {
+    localStorage.removeItem("jwt");
     return <Navigate to="/login" />;
   }
 
