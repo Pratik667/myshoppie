@@ -4,22 +4,12 @@ import React, { Suspense } from "react";
 
 const Layout = React.lazy(() => import("./components/Layout"));
 const Home = React.lazy(() => import("./components/ProductsMain/Home"));
-<<<<<<< HEAD
 const Cart = React.lazy(() => import("./components/Essentials/Cart"));
 const ProductDetail = React.lazy(() => import("./components/ProductsMain/ProductDetail"));
 const ProductsList = React.lazy(() => import("./components/ProductsMain/ProductsList"));
 const Wishlist = React.lazy(() => import("./components/Essentials/Wishlist"));
 const Accounts = React.lazy(() => import("./components/Essentials/Accounts"));
 const SetLocation = React.lazy(() => import("./components/Essentials/SetLocation"));
-=======
-const Cart = React.lazy(() => import("./components/Cart"));
-const ProductDetail = React.lazy(
-  () => import("./components/ProductsMain/ProductDetail"),
-);
-const ProductsList = React.lazy(
-  () => import("./components/ProductsMain/ProductsList"),
-);
->>>>>>> db10518c8b1ddb6e3447334805e5f6e91b8ec2db
 
 function App() {
   return (
@@ -36,7 +26,6 @@ function App() {
         }
       >
         <Routes>
-<<<<<<< HEAD
           <Route path='/' element={<Layout />} >
             <Route path='/' element={<Home />} />
             <Route path='/cart' element={<Cart />} />
@@ -45,13 +34,6 @@ function App() {
             <Route path='/accounts' element={<Accounts />} />
             <Route path='/wishlist' element={<Wishlist />} />
             <Route path='/mylocation' element={<SetLocation />} />
-=======
-          <Route path="/" element={<Layout />}>
-            <Route path="/" element={<Home />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/pdp" element={<ProductDetail />} />
-            <Route path="/products" element={<ProductsList />} />
->>>>>>> db10518c8b1ddb6e3447334805e5f6e91b8ec2db
           </Route>
         </Routes>
       </Suspense>
