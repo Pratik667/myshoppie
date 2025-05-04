@@ -374,3 +374,7 @@
     padding: 20px;
   }
 }
+
+.desktop-nav-icons svg {
+  color: var(--primary-color);
+}

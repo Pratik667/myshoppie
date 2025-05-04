@@ -37,18 +37,26 @@ const PrimaryNavbar = () => {
         >
           {/* Logo/Home */}
           <Box>
-            <Link to="/">
-              <IconButton color="inherit">
-                <img
-                  src={logo}
-                  alt="Logo"
-                  style={{ width: "100px", height: "auto" }}
-                />
-              </IconButton>
-            </Link>
+            <IconButton
+              color="inherit"
+              style={{ background: "none" }}
+              component={Link}
+              to="/"
+            >
+              <img
+                src={logo}
+                alt="Logo"
+                style={{ width: "100px", height: "auto" }}
+              />
+            </IconButton>
 
             {/* Location Icon */}
-            <IconButton color="inherit">
+            <IconButton
+              color="inherit"
+              className="desktop-nav-icons"
+              component={Link}
+              to="/mylocation"
+            >
               <LocationOnIcon />
             </IconButton>
           </Box>
@@ -71,13 +79,28 @@ const PrimaryNavbar = () => {
 
           {/* Wishlist, Cart, Account Icons */}
           <Box>
-            <IconButton color="inherit">
+            <IconButton
+              color="inherit"
+              component={Link}
+              to="/wishlist"
+              className="desktop-nav-icons"
+            >
               <FavoriteBorderIcon />
             </IconButton>
-            <IconButton color="inherit">
+            <IconButton
+              color="inherit"
+              component={Link}
+              to="/cart"
+              className="desktop-nav-icons"
+            >
               <ShoppingCartIcon />
             </IconButton>
-            <IconButton color="inherit">
+            <IconButton
+              color="inherit"
+              component={Link}
+              to="/accounts"
+              className="desktop-nav-icons"
+            >
               <AccountCircleIcon />
             </IconButton>
           </Box>
@@ -96,21 +119,35 @@ const PrimaryNavbar = () => {
         }}
       >
         <BottomNavigation showLabels className="bottom-navigation">
-          <BottomNavigationAction label="Cart" icon={<ShoppingCartIcon />} />
-          <BottomNavigationAction label="Location" icon={<LocationOnIcon />} />
+          <BottomNavigationAction
+            label="Cart"
+            icon={<ShoppingCartIcon />}
+            component={Link}
+            to="/cart"
+          />
+          <BottomNavigationAction
+            label="Location"
+            icon={<LocationOnIcon />}
+            component={Link}
+            to="/mylocation"
+          />
           <BottomNavigationAction
             label="Category"
             onClick={toggleDrawer}
             icon={<MenuIcon />}
-          />{" "}
+          />
           {/* Toggle Drawer */}
           <BottomNavigationAction
             label="Wishlist"
             icon={<FavoriteBorderIcon />}
+            component={Link}
+            to="/wishlist"
           />
           <BottomNavigationAction
             label="Account"
             icon={<AccountCircleIcon />}
+            component={Link}
+            to="/accounts"
           />
         </BottomNavigation>
       </Box>
