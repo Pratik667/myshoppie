@@ -35,10 +35,11 @@ jobs:
           git config --global user.name 'github-actions'
           git config --global user.email 'actions@github.com'
           git remote set-url origin https://x-access-token:${GH_PAT}@github.com/${{ github.repository }}
-          
-          # Prevent workflow files from being committed
+
           git add --all
           git reset HEAD .github/workflows/
-
           git commit -m "Auto-format code with Prettier" || echo "No changes to commit"
-          git push origin HEAD:$GITHUB_HEAD_REF
+
+          branch_name=$(echo "${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}")
+          git push origin HEAD:$branch_name
+
