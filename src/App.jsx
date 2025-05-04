@@ -1,21 +1,21 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import React, { Suspense } from "react";
+import { lazy, Suspense } from "react";
 
-const Layout = React.lazy(() => import("./components/Layout"));
-const Home = React.lazy(() => import("./components/ProductsMain/Home"));
-const Cart = React.lazy(() => import("./components/Essentials/Cart"));
-const ProductDetail = React.lazy(
+const Layout = lazy(() => import("./components/Layout"));
+const Home = lazy(() => import("./components/ProductsMain/Home"));
+const Cart = lazy(() => import("./components/Essentials/Cart"));
+const ProductDetail = lazy(
   () => import("./components/ProductsMain/ProductDetail"),
 );
-const ProductsList = React.lazy(
+const ProductsList = lazy(
   () => import("./components/ProductsMain/ProductsList"),
 );
-const Wishlist = React.lazy(() => import("./components/Essentials/Wishlist"));
-const Accounts = React.lazy(() => import("./components/Essentials/Accounts"));
-const SetLocation = React.lazy(
-  () => import("./components/Essentials/SetLocation"),
-);
+const Wishlist = lazy(() => import("./components/Essentials/Wishlist"));
+const Accounts = lazy(() => import("./components/Essentials/Accounts"));
+const SetLocation = lazy(() => import("./components/Essentials/SetLocation"));
+const Login = lazy(() => import("./components/Auth/Login"));
+const Register = lazy(() => import("./components/Auth/Register"));
 
 function App() {
   return (
@@ -40,6 +40,8 @@ function App() {
             <Route path="/accounts" element={<Accounts />} />
             <Route path="/wishlist" element={<Wishlist />} />
             <Route path="/mylocation" element={<SetLocation />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
           </Route>
         </Routes>
       </Suspense>

@@ -9,11 +9,10 @@ import {
   BottomNavigationAction,
 } from "@mui/material";
 import logo from "../../assets/logo.svg";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
-import SearchIcon from "@mui/icons-material/Search";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import HomeIcon from "@mui/icons-material/Home";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
 import { useDrawerContext } from "./NavDrawerContext"; // Import context
@@ -49,16 +48,6 @@ const PrimaryNavbar = () => {
                 style={{ width: "100px", height: "auto" }}
               />
             </IconButton>
-
-            {/* Location Icon */}
-            <IconButton
-              color="inherit"
-              className="desktop-nav-icons"
-              component={Link}
-              to="/mylocation"
-            >
-              <LocationOnIcon />
-            </IconButton>
           </Box>
 
           {/* Search Bar (Desktop Only) */}
@@ -72,9 +61,6 @@ const PrimaryNavbar = () => {
             }}
           >
             <InputBase placeholder="Search products" sx={{ ml: 1, flex: 1 }} />
-            <IconButton type="submit" sx={{ p: 1 }}>
-              <SearchIcon />
-            </IconButton>
           </Box>
 
           {/* Wishlist, Cart, Account Icons */}
@@ -120,16 +106,16 @@ const PrimaryNavbar = () => {
       >
         <BottomNavigation showLabels className="bottom-navigation">
           <BottomNavigationAction
+            label="Home"
+            icon={<HomeIcon />}
+            component={Link}
+            to="/"
+          />
+          <BottomNavigationAction
             label="Cart"
             icon={<ShoppingCartIcon />}
             component={Link}
             to="/cart"
-          />
-          <BottomNavigationAction
-            label="Location"
-            icon={<LocationOnIcon />}
-            component={Link}
-            to="/mylocation"
           />
           <BottomNavigationAction
             label="Category"
