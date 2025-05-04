@@ -1,7 +1,6 @@
 import React from 'react';
 import { AppBar, Box, Toolbar, IconButton, InputBase, BottomNavigation, BottomNavigationAction } from '@mui/material';
 import logo from '../../assets/logo.svg';
-import SearchIcon from '@mui/icons-material/Search';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
@@ -29,8 +28,17 @@ const PrimaryNavbar = () => {
         >
           {/* Logo/Home */}
           <Box>
-            <IconButton color="inherit" style={{ background: 'none' }} component={Link} to="/">
-              <img src={logo} alt="Logo" style={{ width: '100px', height: 'auto' }} />
+            <IconButton
+              color="inherit"
+              style={{ background: "none" }}
+              component={Link}
+              to="/"
+            >
+              <img
+                src={logo}
+                alt="Logo"
+                style={{ width: "100px", height: "auto" }}
+              />
             </IconButton>
           </Box>
 
@@ -49,13 +57,28 @@ const PrimaryNavbar = () => {
 
           {/* Wishlist, Cart, Account Icons */}
           <Box>
-            <IconButton color="inherit" component={Link} to="/wishlist" className='desktop-nav-icons'>
+            <IconButton
+              color="inherit"
+              component={Link}
+              to="/wishlist"
+              className="desktop-nav-icons"
+            >
               <FavoriteBorderIcon />
             </IconButton>
-            <IconButton color="inherit" component={Link} to="/cart" className='desktop-nav-icons'>
+            <IconButton
+              color="inherit"
+              component={Link}
+              to="/cart"
+              className="desktop-nav-icons"
+            >
               <ShoppingCartIcon />
             </IconButton>
-            <IconButton color="inherit" component={Link} to="/accounts" className='desktop-nav-icons'>
+            <IconButton
+              color="inherit"
+              component={Link}
+              to="/accounts"
+              className="desktop-nav-icons"
+            >
               <AccountCircleIcon />
             </IconButton>
           </Box>
