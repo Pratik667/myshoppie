@@ -76,10 +76,12 @@
 
 .primary-nav .bottom-navigation {
   width: 100%;
+  z-index: 2;
 }
 
 .primary-nav .bottom-nav-box {
   border: 1px solid var(--primary-color);
+  z-index: 2;
 }
 
 .primary-nav .bottom-nav-box button,

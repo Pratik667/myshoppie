@@ -1,0 +1,88 @@
+/* CSS for Login Page */
+.login-page, .register-page {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+    padding: 2rem;
+}
+
+.login-container {
+    background-color: #fff;
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+.login-heading {
+    font-family: "Inter", sans-serif;
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #634c9f;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-field {
+    font-family: "Inter", sans-serif;
+    padding: 0.8rem 1rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input-field:focus {
+    border-color: #999;
+}
+
+.login-btn {
+    font-family: "Inter", sans-serif;
+    padding: 0.9rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #634c9f;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:disabled {
+    background-color: #888;
+    cursor: not-allowed;
+}
+
+.goto-link {
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    font-family: "Inter", sans-serif;
+}
+
+.goto-link a {
+    text-decoration: none;
+    color: #634c9f;
+    font-weight: 500;
+}
+
+.goto-link a:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    font-family: "Inter", sans-serif;
+    margin-top: 1rem;
+    color: #a00;
+    font-size: 0.95rem;
+    text-align: center;
+}

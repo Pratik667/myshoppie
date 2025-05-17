@@ -1,0 +1,49 @@
+.product-card:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-image-box {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.icon-overlay {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  padding: 4px 8px;
+}
+
+.action-icon {
+  cursor: pointer;
+  color: #555;
+  transition: color 0.2s ease;
+}
+
+.action-icon:hover {
+  color: #1976d2; /* Material UI primary blue */
+}
+
+.product-title {
+  margin: 8px 12px 4px;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.product-price {
+  margin: 0 12px 12px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}

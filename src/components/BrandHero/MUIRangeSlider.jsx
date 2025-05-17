@@ -8,16 +8,24 @@ import useIsMobile from "../useIsMobile";
 const MUIRangeSlider = () => {
   const images = [
     {
-      link: "/products?category=electronics",
-      desktopimg: "https://inhouse-eshop.t3.storage.dev/desktop-1.png",
-      tabimg: "https://inhouse-eshop.t3.storage.dev/tab-1.png",
-      mobileimg: "https://inhouse-eshop.t3.storage.dev/mobile-1.png",
+      link: "/products?event=summer",
+      desktopimg: "src/assets/desktop-summer-1.png",
+      mobileimg: "src/assets/mobile-summer-2.png",
     },
     {
-      link: "/products?category=clothes",
-      desktopimg: "https://inhouse-eshop.t3.storage.dev/desktop-2.png",
-      tabimg: "https://inhouse-eshop.t3.storage.dev/tab-2.png",
-      mobileimg: "https://inhouse-eshop.t3.storage.dev/mobile-2.png",
+      link: "/products",
+      desktopimg: "src/assets/desktop-allproducts-1.png",
+      mobileimg: "src/assets/mobile-allproducts-1.png",
+    },
+     {
+      link: "/products",
+      desktopimg: "src/assets/desktop-allproducts-2.png",
+      mobileimg: "src/assets/mobile-allproducts-2.png",
+    },
+     {
+      link: "/products?category=house-kitchen",
+      desktopimg: "src/assets/desktop-kitchenware-1.png",
+      mobileimg: "src/assets/mobile-kitchenware-1.png",
     },
   ];
 

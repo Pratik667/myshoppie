@@ -34,7 +34,7 @@ const ProductsList = () => {
       } catch (error) {
         setError("No Products Found");
       } finally {
-        setLoading(false);
+        setLoading(true);
       }
     };
 
@@ -42,25 +42,28 @@ const ProductsList = () => {
   }, [location]);
 
   return (
-    <div className="product-list">
-      {loading ? (
-        <div className="loader-container">
-          <img
-            src="./assets/mainloader.gif"
-            alt="Loading..."
-            className="loader"
-          />
-        </div>
-      ) : error ? (
-        <p>{error}</p>
-      ) : products.length === 0 ? (
-        <p>No products found</p>
-      ) : (
-        products.map((product) => (
-          <ProductCard key={product._id} product={product} />
-        ))
-      )}
+    <>
+  {loading ? (
+    <div className="loader-container">
+      <img
+        src="/assets/mainloader.gif"
+        alt="Loading..."
+        className="loader"
+      />
     </div>
+  ) : error ? (
+    <p>{error}</p>
+  ) : products.length === 0 ? (
+    <p>No products found</p>
+  ) : (
+    <div className="product-list">
+      {products.map((product) => (
+        <ProductCard key={product._id} product={product} />
+      ))}
+    </div>
+  )}
+</>
+
   );
 };
 

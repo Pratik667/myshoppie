@@ -1,6 +1,7 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { lazy, Suspense } from "react";
+import PrivateRoute from "./components/Auth/PrivateRoute";
 
 const Layout = lazy(() => import("./components/Layout"));
 const Home = lazy(() => import("./components/ProductsMain/Home"));
@@ -34,11 +35,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route path="/" element={<Home />} />
-            <Route path="/cart" element={<Cart />} />
+            <Route path="/cart" element={<PrivateRoute><Cart /></PrivateRoute>} />
             <Route path="/pdp" element={<ProductDetail />} />
             <Route path="/products" element={<ProductsList />} />
-            <Route path="/accounts" element={<Accounts />} />
-            <Route path="/wishlist" element={<Wishlist />} />
+            <Route path="/accounts" element={<PrivateRoute><Accounts /></PrivateRoute>} />
+            <Route path="/wishlist" element={<PrivateRoute><Wishlist /></PrivateRoute>} />
             <Route path="/mylocation" element={<SetLocation />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
