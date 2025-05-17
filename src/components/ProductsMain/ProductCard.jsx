@@ -4,14 +4,14 @@ import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import axios from "axios";
-import {jwtDecode} from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
 import "./ProductCard.css";
 
 const ProductCard = ({ product }) => {
   const handleAddToCart = async (e) => {
     e.preventDefault(); // Prevents Link navigation when clicking icon
 
-    const token = localStorage.getItem('jwt');
+    const token = localStorage.getItem("jwt");
     if (!token) {
       alert("Please log in to add items to cart.");
       return;
@@ -32,7 +32,7 @@ const ProductCard = ({ product }) => {
           headers: {
             Authorization: `Bearer ${token}`,
           },
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -56,7 +56,10 @@ const ProductCard = ({ product }) => {
             titleAccess="Add to Cart"
             onClick={handleAddToCart}
           />
-          <FavoriteBorderIcon className="action-icon" titleAccess="Add to Wishlist" />
+          <FavoriteBorderIcon
+            className="action-icon"
+            titleAccess="Add to Wishlist"
+          />
         </div>
       </div>
       <h3 className="product-title">{product.name}</h3>

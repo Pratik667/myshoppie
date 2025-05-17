@@ -1,14 +1,14 @@
-import './Login.css';
+import "./Login.css";
 import { useState } from "react";
 import { useNavigate, Navigate, Link } from "react-router-dom";
-import axios from "axios";  // Import Axios
+import axios from "axios"; // Import Axios
 
 const Register = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false);  // Loading state
-  const [error, setError] = useState("");  // Error state
+  const [loading, setLoading] = useState(false); // Loading state
+  const [error, setError] = useState(""); // Error state
   const navigate = useNavigate();
   const token = localStorage.getItem("jwt");
 
@@ -23,14 +23,14 @@ const Register = () => {
 
     // Reset error state
     setError("");
-    setLoading(true);  // Start loading
+    setLoading(true); // Start loading
 
     try {
       // Make the login request using Axios
       const response = await axios.post(
         "https://ukkh4uvf1d.execute-api.eu-north-1.amazonaws.com/api/users/register",
         { name, email, password },
-        { headers: { "Content-Type": "application/json" } }
+        { headers: { "Content-Type": "application/json" } },
       );
 
       // Check if the response contains a token
@@ -42,7 +42,7 @@ const Register = () => {
     } catch (err) {
       setError("Username or Password is incorrect.");
     } finally {
-      setLoading(false);  // Stop loading
+      setLoading(false); // Stop loading
     }
   };
   return (
@@ -74,23 +74,16 @@ const Register = () => {
             required
             className="input-field"
           />
-          <button
-            type="submit"
-            className="login-btn"
-            disabled={loading}
-          >
+          <button type="submit" className="login-btn" disabled={loading}>
             {loading ? "Logging in..." : "Login"}
           </button>
-          <div className="goto-link m-2 ml-0">Already an User? <Link to="/login">Login</Link></div>
+          <div className="goto-link m-2 ml-0">
+            Already an User? <Link to="/login">Login</Link>
+          </div>
         </form>
         {/* Display error message */}
-        {error && (
-          <div className="error-message">
-            {error}
-          </div>
-        )}
+        {error && <div className="error-message">{error}</div>}
       </div>
-
     </section>
   );
 };
