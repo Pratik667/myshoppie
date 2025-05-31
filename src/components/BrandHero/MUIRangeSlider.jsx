@@ -8,24 +8,24 @@ import useIsMobile from "../useIsMobile";
 const MUIRangeSlider = () => {
   const images = [
     {
+      link: "/products",
+      desktopimg: "/assets/desktop-allproducts-2.png",
+      mobileimg: "/assets/mobile-allproducts-2.png",
+    },
+    {
       link: "/products?event=summer",
-      desktopimg: "src/assets/desktop-summer-1.png",
-      mobileimg: "src/assets/mobile-summer-2.png",
+      desktopimg: "/assets/desktop-summer-1.png",
+      mobileimg: "/assets/mobile-summer-2.png",
     },
     {
       link: "/products",
-      desktopimg: "src/assets/desktop-allproducts-1.png",
-      mobileimg: "src/assets/mobile-allproducts-1.png",
+      desktopimg: "/assets/desktop-allproducts-1.png",
+      mobileimg: "/assets/mobile-allproducts-1.png",
     },
-     {
-      link: "/products",
-      desktopimg: "src/assets/desktop-allproducts-2.png",
-      mobileimg: "src/assets/mobile-allproducts-2.png",
-    },
-     {
+    {
       link: "/products?category=house-kitchen",
-      desktopimg: "src/assets/desktop-kitchenware-1.png",
-      mobileimg: "src/assets/mobile-kitchenware-1.png",
+      desktopimg: "/assets/desktop-kitchenware-1.png",
+      mobileimg: "/assets/mobile-kitchenware-1.png",
     },
   ];
 

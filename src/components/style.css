@@ -380,3 +380,27 @@
 .desktop-nav-icons svg {
   color: var(--primary-color);
 }
+
+.productcard-dialog{
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  text-transform: capitalize;
+  font-size: 15px;
+}
+
+.productcard-dialog button{
+   font-weight: 500;
+  font-family: "Inter", sans-serif;
+  text-transform: capitalize;
+  font-size: 15px;
+  color: var(--primary-color);
+}
+
+.productcard-snackbar > div{
+   font-weight: 500;
+  font-family: "Inter", sans-serif;
+  text-transform: capitalize;
+  font-size: 15px;
+  background: var(--primary-color);
+  color: var(--text-color-white);
+}

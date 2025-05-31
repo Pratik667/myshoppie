@@ -2,6 +2,8 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import PrivateRoute from "./components/Auth/PrivateRoute";
+import { Provider } from 'react-redux';
+import store from "./components/GlobalStore/store";
 
 const Layout = lazy(() => import("./components/Layout"));
 const Home = lazy(() => import("./components/ProductsMain/Home"));
@@ -20,6 +22,8 @@ const Register = lazy(() => import("./components/Auth/Register"));
 
 function App() {
   return (
+    <Provider store={store}>
+
     <Router>
       <Suspense
         fallback={
@@ -47,6 +51,7 @@ function App() {
         </Routes>
       </Suspense>
     </Router>
+    </Provider>
   );
 }
 

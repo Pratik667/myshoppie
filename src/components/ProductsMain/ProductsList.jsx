@@ -34,7 +34,7 @@ const ProductsList = () => {
       } catch (error) {
         setError("No Products Found");
       } finally {
-        setLoading(true);
+        setLoading(false);
       }
     };
 

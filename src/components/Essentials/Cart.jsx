@@ -86,7 +86,7 @@ const Cart = () => {
       className="loader"
     />
   </div>;
-  if (!cart || cart.items.length === 0) return <p>Your cart is empty.</p>;
+  if (!cart || cart.items.length === 0) return <h2 className="cart-container">Your cart is empty.</h2>;
 
   return (
     <div className="cart-container">
@@ -95,7 +95,7 @@ const Cart = () => {
         <div className="cart-item" key={item._id}>
           <img src={item.product.image} alt={item.product.name} />
           <div className="cart-item-info">
-            <h4>{item.product.name}</h4>
+            <h4 className="product-name">{item.product.name}</h4>
             <p>₹{item.product.price}</p>
             <div className='action-button'>
               <div className="quantity-controls">
