@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useNavigate, Navigate, Link } from "react-router-dom";
 import axios from "axios"; // Import Axios
 import "./Login.css";
-
+import { GoogleLogin, GoogleOAuthProvider } from '@react-oauth/google';
+import FacebookLogin from 'react-facebook-login';
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -15,6 +16,11 @@ const Login = () => {
   if (token) {
     return <Navigate to="/cart" />;
   }
+
+  const handleGoogleLogin = (credentialResponse) => {
+    console.log("Google login success:", credentialResponse);
+    // Send token to backend here
+  };
 
   // Handle login logic
   const handleLogin = async (e) => {
@@ -75,6 +81,15 @@ const Login = () => {
             {loading ? "Logging in..." : "Login"}
           </button>
 
+          <p className="separator">(or)</p>
+          <GoogleOAuthProvider clientId="662962065626-475ju3r9b767t23vif568uocjmc5vlh0.apps.googleusercontent.com">
+            <GoogleLogin
+              onSuccess={handleGoogleLogin}
+              onError={() => console.log('Google login failed')}
+            />
+          </GoogleOAuthProvider>
+
+        
           <div className="goto-link m-2 ml-0">
             Not an User? <Link to="/register">Register</Link>
           </div>

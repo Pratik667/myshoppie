@@ -42,27 +42,25 @@ const ProductsList = () => {
   }, [location]);
 
   return (
-    <>
+     <section className="product-list">
       {loading ? (
-        <div className="loader-container">
-          <img
-            src="/assets/mainloader.gif"
-            alt="Loading..."
-            className="loader"
-          />
-        </div>
+          [...Array(10)].map((_, index) => (
+          <div key={index} className="product-card">
+            <div className="skeleton product-skeleton"></div>
+            <div className="skeleton text-skeleton"></div>
+            <div className="skeleton text-skeleton" style={{ width: "60%" }}></div>
+          </div>
+          ))
       ) : error ? (
         <p>{error}</p>
       ) : products.length === 0 ? (
         <p>No products found</p>
-      ) : (
-        <div className="product-list">
-          {products.map((product) => (
+      ) : (       
+          products.map((product) => (
             <ProductCard key={product._id} product={product} />
-          ))}
-        </div>
+          ))       
       )}
-    </>
+    </section>
   );
 };
 

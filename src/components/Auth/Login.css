@@ -87,3 +87,21 @@
   font-size: 0.95rem;
   text-align: center;
 }
+
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+  margin: 20px 0;
+  font-weight: 500;
+}
+
+.separator::before,
+.separator::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #ccc;
+  margin: 0 10px;
+}
