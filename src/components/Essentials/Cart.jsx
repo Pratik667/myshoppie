@@ -79,14 +79,18 @@ const Cart = () => {
     }
   };
 
-  if (loading) return <div className="loader-container">
-    <img
-      src="./assets/mainloader.gif"
-      alt="Loading..."
-      className="loader"
-    />
-  </div>;
-  if (!cart || cart.items.length === 0) return <h2 className="cart-container">Your cart is empty.</h2>;
+  if (loading)
+    return (
+      <div className="loader-container">
+        <img
+          src="./assets/mainloader.gif"
+          alt="Loading..."
+          className="loader"
+        />
+      </div>
+    );
+  if (!cart || cart.items.length === 0)
+    return <h2 className="cart-container">Your cart is empty.</h2>;
 
   return (
     <div className="cart-container">

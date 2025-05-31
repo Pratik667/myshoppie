@@ -3,34 +3,34 @@ import { useState } from "react";
 import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import Button from '@mui/material/Button';
-import { styled } from '@mui/material/styles';
-import Dialog from '@mui/material/Dialog';
-import DialogContent from '@mui/material/DialogContent';
-import DialogActions from '@mui/material/DialogActions';
-import IconButton from '@mui/material/IconButton';
-import CloseIcon from '@mui/icons-material/Close';
-import Snackbar from '@mui/material/Snackbar';
+import Button from "@mui/material/Button";
+import { styled } from "@mui/material/styles";
+import Dialog from "@mui/material/Dialog";
+import DialogContent from "@mui/material/DialogContent";
+import DialogActions from "@mui/material/DialogActions";
+import IconButton from "@mui/material/IconButton";
+import CloseIcon from "@mui/icons-material/Close";
+import Snackbar from "@mui/material/Snackbar";
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
 import "./ProductCard.css";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
-  '& .MuiDialogContent-root': {
+  "& .MuiDialogContent-root": {
     padding: theme.spacing(2),
   },
-  '& .MuiDialogActions-root': {
+  "& .MuiDialogActions-root": {
     padding: theme.spacing(1),
   },
 }));
 
 const ProductCard = ({ product }) => {
   const [open, setOpen] = useState(false);
-  const [alertMsg, setAlertMsg] = useState('Welcome to JinStore');
+  const [alertMsg, setAlertMsg] = useState("Welcome to JinStore");
   const [openSnack, setOpenSnack] = useState({
     opens: false,
-    vertical: 'bottom',
-    horizontal: 'right',
+    vertical: "bottom",
+    horizontal: "right",
   });
 
   const { vertical, horizontal, opens } = openSnack;
@@ -43,7 +43,7 @@ const ProductCard = ({ product }) => {
   };
 
   const handleSnackClose = (event, reason) => {
-    if (reason === 'clickaway') return; // Optional: ignore clickaway
+    if (reason === "clickaway") return; // Optional: ignore clickaway
     setOpenSnack({ ...openSnack, opens: false });
   };
 
@@ -86,24 +86,23 @@ const ProductCard = ({ product }) => {
       // console.error("Add to cart error:", error);
       setAlertMsg("Error adding product to cart");
       setOpenSnack({ ...openSnack, opens: true });
-
     }
   };
 
   const handleAddToWishlist = async (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
 
-    const token = localStorage.getItem('jwt');
+    const token = localStorage.getItem("jwt");
     if (!token) {
       setAlertMsg("Please log in to add items to Wishlist.");
       setOpen(true);
       return;
     }
 
-      try {
+    try {
       const decoded = jwtDecode(token);
       const userId = decoded.id; // adjust based on your JWT structure
- const response = await axios.post(
+      const response = await axios.post(
         "https://ukkh4uvf1d.execute-api.eu-north-1.amazonaws.com/api/wishlist/add",
         {
           userId,
@@ -114,7 +113,7 @@ const ProductCard = ({ product }) => {
           headers: {
             Authorization: `Bearer ${token}`,
           },
-        }
+        },
       );
 
       if (response.status === 200) {
@@ -124,26 +123,37 @@ const ProductCard = ({ product }) => {
         setAlertMsg("Failed to add to Wishlist");
         setOpenSnack({ ...openSnack, opens: true });
       }
-        } catch (error) {
+    } catch (error) {
       // console.error("Add to cart error:", error);
       setAlertMsg("Error adding product to Wishlist");
       setOpenSnack({ ...openSnack, opens: true });
-
     }
-  }
+  };
 
   return (
     <>
-      <Link to={`/pdp`} state={{ productdata: product }} className="product-card">
+      <Link
+        to={`/pdp`}
+        state={{ productdata: product }}
+        className="product-card"
+      >
         <div className="product-image-box">
-          <img className="product-image" src={product.image} alt={product.name} />
+          <img
+            className="product-image"
+            src={product.image}
+            alt={product.name}
+          />
           <div className="icon-overlay">
             <ShoppingCartIcon
               className="action-icon"
               titleAccess="Add to Cart"
               onClick={handleAddToCart}
             />
-            <FavoriteBorderIcon className="action-icon" titleAccess="Add to Wishlist" onClick={handleAddToWishlist}/>
+            <FavoriteBorderIcon
+              className="action-icon"
+              titleAccess="Add to Wishlist"
+              onClick={handleAddToWishlist}
+            />
           </div>
         </div>
         <h3 className="product-title">{product.name}</h3>
@@ -158,10 +168,9 @@ const ProductCard = ({ product }) => {
         onClose={handleSnackClose}
         message={alertMsg}
         key={vertical + horizontal}
-         autoHideDuration={1200}
-         className="productcard-snackbar"
+        autoHideDuration={1200}
+        className="productcard-snackbar"
       />
-
 
       <BootstrapDialog
         onClose={handleClose}
@@ -173,7 +182,7 @@ const ProductCard = ({ product }) => {
           aria-label="close"
           onClick={handleClose}
           sx={(theme) => ({
-            position: 'absolute',
+            position: "absolute",
             right: 8,
             top: 8,
             color: theme.palette.grey[500],
@@ -181,9 +190,7 @@ const ProductCard = ({ product }) => {
         >
           <CloseIcon />
         </IconButton>
-        <DialogContent sx={{ mt: 5 }}>
-          {alertMsg}
-        </DialogContent>
+        <DialogContent sx={{ mt: 5 }}>{alertMsg}</DialogContent>
         <DialogActions>
           <Button autoFocus onClick={handleClose}>
             Okay

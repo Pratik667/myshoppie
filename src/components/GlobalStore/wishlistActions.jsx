@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 import { jwtDecode } from "jwt-decode";
 
 export const fetchWishlist = () => {
@@ -15,13 +15,12 @@ export const fetchWishlist = () => {
           headers: {
             Authorization: `Bearer ${token}`,
           },
-        }
+        },
       );
 
-      dispatch({ type: 'FETCH_WISHLIST_SUCCESS', payload: response.data });
-
+      dispatch({ type: "FETCH_WISHLIST_SUCCESS", payload: response.data });
     } catch (error) {
-        console.log(`error: ${error.message}`);
+      console.log(`error: ${error.message}`);
     }
   };
 };
