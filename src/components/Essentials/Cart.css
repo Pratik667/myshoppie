@@ -5,8 +5,8 @@
   padding: 20px;
 }
 
-h2{
-  color:#634c9f;
+h2 {
+  color: #634c9f;
   margin-bottom: 20px;
 }
 
@@ -35,21 +35,21 @@ h2{
 }
 
 .quantity-controls button {
-    padding: 5px 10px;
-    background: #484daaaa;
-    color: #fff;
-    border-color: #cdced6aa;
-    cursor: pointer;
+  padding: 5px 10px;
+  background: #484daaaa;
+  color: #fff;
+  border-color: #cdced6aa;
+  cursor: pointer;
 }
 
 .remove-btn {
-     color: #dc2626;
-    position: absolute;
-    cursor: pointer;
-    right: 0;
-    top: 0;
+  color: #dc2626;
+  position: absolute;
+  cursor: pointer;
+  right: 0;
+  top: 0;
 }
-.action-button{
+.action-button {
   position: relative;
       height: 20px;
 }

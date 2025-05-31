@@ -50,7 +50,7 @@ const ProductCard = ({ product }) => {
   const handleAddToCart = async (e) => {
     e.preventDefault(); // Prevents Link navigation when clicking icon
 
-    const token = localStorage.getItem('jwt');
+    const token = localStorage.getItem("jwt");
     if (!token) {
       setAlertMsg("Please log in to add items to cart.");
       setOpen(true);
@@ -72,7 +72,7 @@ const ProductCard = ({ product }) => {
           headers: {
             Authorization: `Bearer ${token}`,
           },
-        }
+        },
       );
 
       if (response.status === 200) {

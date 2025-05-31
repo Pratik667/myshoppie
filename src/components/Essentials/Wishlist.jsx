@@ -73,33 +73,12 @@ const Wishlist = () => {
           <div className="cart-item-info">
             <h4 className="product-name">{item.product.name}</h4>
             <p>₹{item.product.price}</p>
-            <div className='action-button'>
-              {/* <div className="quantity-controls">
-                <button
-                  onClick={() =>
-                    updateQuantity(item.product._id, -1)
-                  }
-                  disabled={item.quantity <= 1}
-                >
-                  -
-                </button>
-                <span>{item.quantity}</span>
-                <button
-                  onClick={() =>
-                    updateQuantity(item.product._id, 1)
-                  }
-                >
-                  +
-                </button>
-              </div> */}
+            <div className='action-button'>             
               <DeleteIcon className="remove-btn" onClick={() => removeItem(item.product._id)} />
             </div>
           </div>
         </div>
-      ))}
-      {/* <div className="cart-total">
-        <h3>Cart Total: ₹{cart.totalPrice}</h3>
-      </div> */}
+      ))}    
     </div>
 };
 

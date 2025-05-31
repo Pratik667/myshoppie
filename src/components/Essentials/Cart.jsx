@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
-import DeleteIcon from '@mui/icons-material/Delete';
+import DeleteIcon from "@mui/icons-material/Delete";
 import "./Cart.css";
 
 const Cart = () => {
@@ -24,7 +24,7 @@ const Cart = () => {
           headers: {
             Authorization: `Bearer ${token}`,
           },
-        }
+        },
       );
       setCart(response.data);
     } catch (error) {
@@ -49,7 +49,7 @@ const Cart = () => {
           headers: {
             Authorization: `Bearer ${token}`,
           },
-        }
+        },
       );
       fetchCart(userId);
     } catch (error) {
@@ -71,7 +71,7 @@ const Cart = () => {
           headers: {
             Authorization: `Bearer ${token}`,
           },
-        }
+        },
       );
       fetchCart(userId);
     } catch (error) {
@@ -97,26 +97,23 @@ const Cart = () => {
           <div className="cart-item-info">
             <h4 className="product-name">{item.product.name}</h4>
             <p>₹{item.product.price}</p>
-            <div className='action-button'>
+            <div className="action-button">
               <div className="quantity-controls">
                 <button
-                  onClick={() =>
-                    updateQuantity(item.product._id, -1)
-                  }
+                  onClick={() => updateQuantity(item.product._id, -1)}
                   disabled={item.quantity <= 1}
                 >
                   -
                 </button>
                 <span>{item.quantity}</span>
-                <button
-                  onClick={() =>
-                    updateQuantity(item.product._id, 1)
-                  }
-                >
+                <button onClick={() => updateQuantity(item.product._id, 1)}>
                   +
                 </button>
               </div>
-              <DeleteIcon className="remove-btn" onClick={() => removeItem(item.product._id, item.quantity - 1)} />
+              <DeleteIcon
+                className="remove-btn"
+                onClick={() => removeItem(item.product._id, item.quantity - 1)}
+              />
             </div>
           </div>
         </div>

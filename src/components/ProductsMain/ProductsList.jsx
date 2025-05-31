@@ -43,27 +43,26 @@ const ProductsList = () => {
 
   return (
     <>
-  {loading ? (
-    <div className="loader-container">
-      <img
-        src="/assets/mainloader.gif"
-        alt="Loading..."
-        className="loader"
-      />
-    </div>
-  ) : error ? (
-    <p>{error}</p>
-  ) : products.length === 0 ? (
-    <p>No products found</p>
-  ) : (
-    <div className="product-list">
-      {products.map((product) => (
-        <ProductCard key={product._id} product={product} />
-      ))}
-    </div>
-  )}
-</>
-
+      {loading ? (
+        <div className="loader-container">
+          <img
+            src="/assets/mainloader.gif"
+            alt="Loading..."
+            className="loader"
+          />
+        </div>
+      ) : error ? (
+        <p>{error}</p>
+      ) : products.length === 0 ? (
+        <p>No products found</p>
+      ) : (
+        <div className="product-list">
+          {products.map((product) => (
+            <ProductCard key={product._id} product={product} />
+          ))}
+        </div>
+      )}
+    </>
   );
 };
 

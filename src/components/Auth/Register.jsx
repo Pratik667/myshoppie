@@ -1,4 +1,4 @@
-import './Login.css';
+import "./Login.css";
 import { useState } from "react";
 import { useNavigate, Navigate, Link } from "react-router-dom";
 import Button from '@mui/material/Button';
@@ -54,7 +54,7 @@ const Register = () => {
       response = await axios.post(
         "https://ukkh4uvf1d.execute-api.eu-north-1.amazonaws.com/api/users/register",
         { name, email, password },
-        { headers: { "Content-Type": "application/json" } }
+        { headers: { "Content-Type": "application/json" } },
       );
       // Success: status is 2xx
       setAlertMsg(response.data.message);
