@@ -51,7 +51,7 @@ h2 {
 }
 .action-button {
   position: relative;
-      height: 20px;
+  height: 20px;
 }
 .cart-total {
   text-align: right;
@@ -59,21 +59,22 @@ h2 {
   font-size: 1.2rem;
   font-weight: bold;
 }
-.product-name, .cart-total{
-    font-size: 14px;
-    font-family: "Inter", sans-serif;
-    font-weight: 500;
-    letter-spacing: -0.26px;
-    line-height: 1.5;
-    /* word-spacing: 5px; */
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin: 6px 0 10px 0;
+.product-name,
+.cart-total {
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.26px;
+  line-height: 1.5;
+  /* word-spacing: 5px; */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 6px 0 10px 0;
 }
 
-.cart-total h3{
-   font-size: 18px;
+.cart-total h3 {
+  font-size: 18px;
 }

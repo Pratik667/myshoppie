@@ -381,23 +381,23 @@
   color: var(--primary-color);
 }
 
-.productcard-dialog{
+.productcard-dialog {
   font-weight: 500;
   font-family: "Inter", sans-serif;
   text-transform: capitalize;
   font-size: 15px;
 }
 
-.productcard-dialog button{
-   font-weight: 500;
+.productcard-dialog button {
+  font-weight: 500;
   font-family: "Inter", sans-serif;
   text-transform: capitalize;
   font-size: 15px;
   color: var(--primary-color);
 }
 
-.productcard-snackbar > div{
-   font-weight: 500;
+.productcard-snackbar > div {
+  font-weight: 500;
   font-family: "Inter", sans-serif;
   text-transform: capitalize;
   font-size: 15px;

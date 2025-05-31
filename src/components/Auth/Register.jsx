@@ -1,20 +1,20 @@
 import "./Login.css";
 import { useState } from "react";
 import { useNavigate, Navigate, Link } from "react-router-dom";
-import Button from '@mui/material/Button';
-import { styled } from '@mui/material/styles';
-import Dialog from '@mui/material/Dialog';
-import DialogContent from '@mui/material/DialogContent';
-import DialogActions from '@mui/material/DialogActions';
-import IconButton from '@mui/material/IconButton';
-import CloseIcon from '@mui/icons-material/Close';
-import axios from "axios";  // Import Axios
+import Button from "@mui/material/Button";
+import { styled } from "@mui/material/styles";
+import Dialog from "@mui/material/Dialog";
+import DialogContent from "@mui/material/DialogContent";
+import DialogActions from "@mui/material/DialogActions";
+import IconButton from "@mui/material/IconButton";
+import CloseIcon from "@mui/icons-material/Close";
+import axios from "axios"; // Import Axios
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
-  '& .MuiDialogContent-root': {
+  "& .MuiDialogContent-root": {
     padding: theme.spacing(2),
   },
-  '& .MuiDialogActions-root': {
+  "& .MuiDialogActions-root": {
     padding: theme.spacing(1),
   },
 }));
@@ -23,10 +23,10 @@ const Register = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false);  // Loading state
-  const [error, setError] = useState("");  // Error state
+  const [loading, setLoading] = useState(false); // Loading state
+  const [error, setError] = useState(""); // Error state
   const [open, setOpen] = useState(false);
-  const [alertMsg, setAlertMsg] = useState('Welcome to JinStore');
+  const [alertMsg, setAlertMsg] = useState("Welcome to JinStore");
 
   // const handleClickOpen = () => {
   //   setOpen(true);
@@ -48,7 +48,7 @@ const Register = () => {
 
     // Reset error state
     setError("");
-    setLoading(true);  // Start loading
+    setLoading(true); // Start loading
     let response;
     try {
       response = await axios.post(
@@ -77,7 +77,6 @@ const Register = () => {
     } finally {
       setLoading(false);
     }
-
   };
   return (
     <>
@@ -109,23 +108,16 @@ const Register = () => {
               required
               className="input-field"
             />
-            <button
-              type="submit"
-              className="login-btn"
-              disabled={loading}
-            >
+            <button type="submit" className="login-btn" disabled={loading}>
               {loading ? "Registering..." : "Register"}
             </button>
-            <div className="goto-link m-2 ml-0">Already an User? <Link to="/login">Login</Link></div>
+            <div className="goto-link m-2 ml-0">
+              Already an User? <Link to="/login">Login</Link>
+            </div>
           </form>
           {/* Display error message */}
-          {error && (
-            <div className="error-message">
-              {error}
-            </div>
-          )}
+          {error && <div className="error-message">{error}</div>}
         </div>
-
       </section>
 
       <BootstrapDialog
@@ -138,7 +130,7 @@ const Register = () => {
           aria-label="close"
           onClick={handleClose}
           sx={(theme) => ({
-            position: 'absolute',
+            position: "absolute",
             right: 8,
             top: 8,
             color: theme.palette.grey[500],
@@ -146,9 +138,7 @@ const Register = () => {
         >
           <CloseIcon />
         </IconButton>
-        <DialogContent sx={{ mt: 5 }}>
-          {alertMsg}
-        </DialogContent>
+        <DialogContent sx={{ mt: 5 }}>{alertMsg}</DialogContent>
         <DialogActions>
           <Button autoFocus onClick={() => navigate("/login")}>
             Okay

@@ -1,7 +1,7 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchWishlist } from '../GlobalStore/wishlistActions';
-import { fetchCart } from '../GlobalStore/cartActions';
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchWishlist } from "../GlobalStore/wishlistActions";
+import { fetchCart } from "../GlobalStore/cartActions";
 import {
   AppBar,
   Box,
@@ -17,8 +17,8 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import HomeIcon from "@mui/icons-material/Home";
 import MenuIcon from "@mui/icons-material/Menu";
-import PriorityHighIcon from '@mui/icons-material/PriorityHigh';
-import Badge from '@mui/material/Badge';
+import PriorityHighIcon from "@mui/icons-material/PriorityHigh";
+import Badge from "@mui/material/Badge";
 import { Link } from "react-router-dom";
 import { useDrawerContext } from "./NavDrawerContext"; // Import context
 
@@ -83,7 +83,18 @@ const PrimaryNavbar = () => {
               to="/wishlist"
               className="desktop-nav-icons"
             >
-              <Badge badgeContent={items.items ? items.items.length : <PriorityHighIcon style={{ fontSize: "12px", color: "#fff" }} />} color="error">
+              <Badge
+                badgeContent={
+                  items.items ? (
+                    items.items.length
+                  ) : (
+                    <PriorityHighIcon
+                      style={{ fontSize: "12px", color: "#fff" }}
+                    />
+                  )
+                }
+                color="error"
+              >
                 <FavoriteBorderIcon />
               </Badge>
             </IconButton>
@@ -93,7 +104,18 @@ const PrimaryNavbar = () => {
               to="/cart"
               className="desktop-nav-icons"
             >
-              <Badge badgeContent={cartItems.items ? cartItems.items.length : <PriorityHighIcon style={{ fontSize: "12px", color: "#fff" }} />} color="error">
+              <Badge
+                badgeContent={
+                  cartItems.items ? (
+                    cartItems.items.length
+                  ) : (
+                    <PriorityHighIcon
+                      style={{ fontSize: "12px", color: "#fff" }}
+                    />
+                  )
+                }
+                color="error"
+              >
                 <ShoppingCartIcon />
               </Badge>
             </IconButton>
@@ -130,7 +152,18 @@ const PrimaryNavbar = () => {
           <BottomNavigationAction
             label="Cart"
             icon={
-              <Badge badgeContent={cartItems.items ? cartItems.items.length : <PriorityHighIcon style={{ fontSize: "12px", color: "#fff" }} />} color="error">
+              <Badge
+                badgeContent={
+                  cartItems.items ? (
+                    cartItems.items.length
+                  ) : (
+                    <PriorityHighIcon
+                      style={{ fontSize: "12px", color: "#fff" }}
+                    />
+                  )
+                }
+                color="error"
+              >
                 <ShoppingCartIcon />
               </Badge>
             }
@@ -147,7 +180,18 @@ const PrimaryNavbar = () => {
           <BottomNavigationAction
             label="Wishlist"
             icon={
-              <Badge badgeContent={items.items ? items.items.length : <PriorityHighIcon style={{ fontSize: "12px", color: "#fff" }} />} color="error">
+              <Badge
+                badgeContent={
+                  items.items ? (
+                    items.items.length
+                  ) : (
+                    <PriorityHighIcon
+                      style={{ fontSize: "12px", color: "#fff" }}
+                    />
+                  )
+                }
+                color="error"
+              >
                 <FavoriteBorderIcon />
               </Badge>
             }

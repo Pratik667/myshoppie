@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 import { jwtDecode } from "jwt-decode";
 
 export const fetchCart = () => {
@@ -15,13 +15,12 @@ export const fetchCart = () => {
           headers: {
             Authorization: `Bearer ${token}`,
           },
-        }
+        },
       );
       console.log(response.data);
-      dispatch({ type: 'FETCH_CART_SUCCESS', payload: response.data });
-
+      dispatch({ type: "FETCH_CART_SUCCESS", payload: response.data });
     } catch (error) {
-        console.log(`error: ${error.message}`);
+      console.log(`error: ${error.message}`);
     }
   };
 };
