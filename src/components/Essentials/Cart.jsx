@@ -37,7 +37,6 @@ const Cart = () => {
   const updateQuantity = async (productId, newQty) => {
     try {
       const { id: userId } = jwtDecode(token);
-      console.log(newQty);
       await axios.post(
         `https://ukkh4uvf1d.execute-api.eu-north-1.amazonaws.com/api/cart/add`,
         {
@@ -79,6 +78,36 @@ const Cart = () => {
     }
   };
 
+  useEffect(() => {
+    if (!cart || !cart.items) return;
+    const nullItems = cart.items.filter((item) => item.product === null);
+    if (nullItems.length === 0) return;
+
+    const { id: userId } = jwtDecode(token);
+
+    nullItems.forEach((item) => {
+      axios
+        .post(
+          `https://ukkh4uvf1d.execute-api.eu-north-1.amazonaws.com/api/cart/remove`,
+          {
+            userId,
+            productId: item._id, // assuming item._id is the reference for cart entry
+          },
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          },
+        )
+        .then(() => {
+          console.log(`Removed invalid cart item: ${item._id}`);
+        })
+        .catch((err) => {
+          console.error("Failed to auto-remove null cart item:", err);
+        });
+    });
+  }, [cart, token]);
+
   if (loading)
     return (
       <div className="loader-container">
@@ -89,13 +118,16 @@ const Cart = () => {
         />
       </div>
     );
-  if (!cart || cart.items.length === 0)
+
+  const validItems = cart?.items?.filter((item) => item.product !== null) || [];
+
+  if (validItems.length === 0)
     return <h2 className="cart-container">Your cart is empty.</h2>;
 
   return (
     <div className="cart-container">
       <h2>Your Cart</h2>
-      {cart.items.map((item) => (
+      {validItems.map((item) => (
         <div className="cart-item" key={item._id}>
           <img src={item.product.image} alt={item.product.name} />
           <div className="cart-item-info">
@@ -116,14 +148,22 @@ const Cart = () => {
               </div>
               <DeleteIcon
                 className="remove-btn"
-                onClick={() => removeItem(item.product._id, item.quantity - 1)}
+                onClick={() =>
+                  removeItem(item.product._id, item.quantity - 1)
+                }
               />
             </div>
           </div>
         </div>
       ))}
       <div className="cart-total">
-        <h3>Cart Total: ₹{cart.totalPrice}</h3>
+        <h3>
+          Cart Total: ₹
+          {validItems.reduce(
+            (total, item) => total + item.product.price * item.quantity,
+            0,
+          )}
+        </h3>
       </div>
     </div>
   );

@@ -124,9 +124,17 @@ const ProductCard = ({ product }) => {
         setOpenSnack({ ...openSnack, opens: true });
       }
     } catch (error) {
-      // console.error("Add to cart error:", error);
-      setAlertMsg("Error adding product to Wishlist");
-      setOpenSnack({ ...openSnack, opens: true });
+     if (error.response && error.response.status === 400) {
+      const errorMsg = error.response.data?.message || "";
+      if (errorMsg.includes("already in wishlist")) {
+        setAlertMsg("Product is already in your Wishlist.");
+      } else {
+        setAlertMsg("Failed to add to Wishlist.");
+      }
+    } else {
+      setAlertMsg("Error adding product to Wishlist.");
+    }
+    setOpenSnack({ ...openSnack, opens: true });
     }
   };
 
@@ -163,14 +171,15 @@ const ProductCard = ({ product }) => {
       </Link>
 
       <Snackbar
-        anchorOrigin={{ vertical, horizontal }}
+        anchorOrigin={{ vertical: "top", horizontal: "right" }}
         open={opens}
         onClose={handleSnackClose}
         message={alertMsg}
-        key={vertical + horizontal}
+        key={"topcenter"}
         autoHideDuration={1200}
         className="productcard-snackbar"
       />
+
 
       <BootstrapDialog
         onClose={handleClose}

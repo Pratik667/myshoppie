@@ -29,7 +29,7 @@ const HomeHero = ({ title, type, value }) => {
   return (
     <section className="home-hero-section-1">
       <h3 className="section-title">{title}</h3>
-      <div className="product-list">
+      <div className="home-product-list">
         {loading ? (
           [...Array(4)].map((_, index) => (
           <div key={index} className="product-card">

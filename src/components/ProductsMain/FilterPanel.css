@@ -1,0 +1,39 @@
+/* Global Theme Colors */
+/* body {
+  background-color: #ffffff;
+  color: #333;
+  font-family: "Roboto", sans-serif;
+} */
+
+.filter-panel {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(99, 76, 159, 0.1);
+  margin: 1rem auto;
+  max-width: 1200px;
+}
+
+.filter-title {
+  color: #634c9f;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.MuiCheckbox-root.Mui-checked {
+  color: #634c9f;
+}
+
+/* Responsive Padding */
+@media (max-width: 768px) {
+  .filter-panel {
+    padding: 1rem;
+  }
+}
+
+.accordian-mui{
+  box-shadow: none !important;
+}
+
+.accordian-details{
+    overflow-y: auto;
+    max-height: 250px;
+}

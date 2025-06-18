@@ -55,6 +55,36 @@ const Wishlist = () => {
     }
   };
 
+   useEffect(() => {
+    if (!wishlist || !wishlist.items) return;
+    const nullItems = wishlist.items.filter((item) => item.product === null);
+    if (nullItems.length === 0) return;
+
+    const { id: userId } = jwtDecode(token);
+
+    nullItems.forEach((item) => {
+      axios
+        .post(
+          `https://ukkh4uvf1d.execute-api.eu-north-1.amazonaws.com/api/wishlist/remove`,
+          {
+            userId,
+            productId: item._id, // assuming item._id is the reference for cart entry
+          },
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          },
+        )
+        .then(() => {
+          console.log(`Removed invalid cart item: ${item._id}`);
+        })
+        .catch((err) => {
+          console.error("Failed to auto-remove null cart item:", err);
+        });
+    });
+  }, [wishlist, token]);
+
   if (loading)
     return (
       <div className="loader-container">
@@ -65,13 +95,16 @@ const Wishlist = () => {
         />
       </div>
     );
-  if (!wishlist || wishlist.items.length === 0)
+
+    const validItems = wishlist?.items?.filter((item) => item.product !== null) || [];
+
+  if (validItems.length === 0)
     return <h2 className="cart-container">Your wishlist is empty.</h2>;
 
   return (
     <div className="cart-container">
       <h2>Your Wishlist</h2>
-      {wishlist.items.map((item) => (
+      {validItems.map((item) => (
         <div className="cart-item" key={item._id}>
           <img src={item.product.image} alt={item.product.name} />
           <div className="cart-item-info">

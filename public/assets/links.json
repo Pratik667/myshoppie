@@ -3,8 +3,7 @@
   { "label": "Sale", "to": "/products?event=sale" },
   { "label": "Electronic", "to": "/products?category=electronic" },
   { "label": "House & Kitchen", "to": "/products?category=house-kitchen" },
-  { "label": "Essentials", "to": "/products?category=essentials" },
-  { "label": "Clothes", "to": "/products?category=clothes" },
-  { "label": "Bike & Car", "to": "/products?category=bike-car" },
+  { "label": "Travel", "to": "/products?category=travel" },
+  { "label": "Home Decor", "to": "/products?category=home-decor" },
   { "label": "Bestseller", "to": "/products?event=bestseller" }
 ]

@@ -74,3 +74,9 @@
     margin-bottom: 50px;
   }
 }
+
+.action-button button {
+    margin: 15px 15px 15px 0px;
+    padding: 10px 15px;
+    background: #634c9f;
+}

@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate, Navigate, Link } from "react-router-dom";
 import axios from "axios"; // Import Axios
 import "./Login.css";
-import { GoogleLogin, GoogleOAuthProvider } from '@react-oauth/google';
-import FacebookLogin from 'react-facebook-login';
+import { GoogleLogin } from '@react-oauth/google';
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -17,10 +16,39 @@ const Login = () => {
     return <Navigate to="/cart" />;
   }
 
-  const handleGoogleLogin = (credentialResponse) => {
-    console.log("Google login success:", credentialResponse);
-    // Send token to backend here
+  const handleGoogleLogin = async (credentialResponse, event) => {
+    if (event && event.preventDefault) event.preventDefault();
+
+    setError("");
+    setLoading(true);
+    try {
+      const response = await axios.post(
+        "https://ukkh4uvf1d.execute-api.eu-north-1.amazonaws.com/api/users/login-sso",
+        { credential: credentialResponse.credential },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (response.data.token) {
+        // Save the JWT token in localStorage
+        localStorage.setItem("jwt", response.data.token);
+
+        // Redirect to the dashboard
+        navigate("/cart");
+      } else {
+        setError("Invalid credentials");
+      }
+
+    } catch (err) {
+      setError(err.response.data.message);
+    } finally {
+      setLoading(false); // Stop loading
+    }
   };
+
 
   // Handle login logic
   const handleLogin = async (e) => {
@@ -82,14 +110,15 @@ const Login = () => {
           </button>
 
           <p className="separator">(or)</p>
-          <GoogleOAuthProvider clientId="662962065626-475ju3r9b767t23vif568uocjmc5vlh0.apps.googleusercontent.com">
-            <GoogleLogin
-              onSuccess={handleGoogleLogin}
-              onError={() => console.log('Google login failed')}
-            />
-          </GoogleOAuthProvider>
+          <GoogleLogin
+            onSuccess={(credentialResponse) => {
+              handleGoogleLogin(credentialResponse);
+            }}
+            onError={() => {
+              console.log("Login Failed");
+            }}
+          />
 
-        
           <div className="goto-link m-2 ml-0">
             Not an User? <Link to="/register">Register</Link>
           </div>
