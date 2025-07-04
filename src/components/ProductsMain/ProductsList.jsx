@@ -22,9 +22,15 @@ const ProductsList = () => {
   const filteredProducts = useMemo(() => {
     if (!products || products.length === 0) return [];
     let filtered = products.filter((p) => {
-      const matchEvent = filters.event.size === 0 || filters.event.has(p.event.toLowerCase().trim());
-      const matchCategory = filters.category.size === 0 || filters.category.has(p.category.toLowerCase().trim());
-      const matchBrand = filters.brand.size === 0 || filters.brand.has(p.brand.toLowerCase().trim());
+      const matchEvent =
+        filters.event.size === 0 ||
+        filters.event.has(p.event.toLowerCase().trim());
+      const matchCategory =
+        filters.category.size === 0 ||
+        filters.category.has(p.category.toLowerCase().trim());
+      const matchBrand =
+        filters.brand.size === 0 ||
+        filters.brand.has(p.brand.toLowerCase().trim());
       return matchEvent && matchCategory && matchBrand;
     });
 
@@ -41,7 +47,6 @@ const ProductsList = () => {
       newSet.has(value) ? newSet.delete(value) : newSet.add(value);
       return { ...prev, [type]: newSet };
     });
-
   };
 
   const handleSortChange = (e) => {
@@ -72,39 +77,43 @@ const ProductsList = () => {
         const uniqueEvents = [
           ...new Set(
             response.data
-              .map(e =>
-                typeof e.event === 'string' ? e.event.toLowerCase().trim() : ""
+              .map((e) =>
+                typeof e.event === "string" ? e.event.toLowerCase().trim() : "",
               )
-              .filter(e => e !== "")
-          )
+              .filter((e) => e !== ""),
+          ),
         ];
         const uniqueBrands = [
           ...new Set(
             response.data
-              .map(e =>
-                typeof e.brand === 'string' ? e.brand.toLowerCase().trim() : ""
+              .map((e) =>
+                typeof e.brand === "string" ? e.brand.toLowerCase().trim() : "",
               )
-              .filter(e => e !== "")
-          )
+              .filter((e) => e !== ""),
+          ),
         ];
         const uniqueCategory = [
           ...new Set(
             response.data
-              .map(e =>
-                typeof e.category === 'string' ? e.category.toLowerCase().trim() : ""
+              .map((e) =>
+                typeof e.category === "string"
+                  ? e.category.toLowerCase().trim()
+                  : "",
               )
-              .filter(e => e !== "")
-          )
+              .filter((e) => e !== ""),
+          ),
         ];
         setEvent(uniqueEvents);
         setBrand(uniqueBrands);
         setCategory(uniqueCategory);
         setFilters((prev) => ({
           ...prev,
-          category: category ? new Set([category.toLowerCase().trim()]) : new Set(),
+          category: category
+            ? new Set([category.toLowerCase().trim()])
+            : new Set(),
           brand: brand ? new Set([brand.toLowerCase().trim()]) : new Set(),
           event: event ? new Set([event.toLowerCase().trim()]) : new Set(),
-         }));
+        }));
       }
     } catch (error) {
       setError("No Products Found");
@@ -116,25 +125,26 @@ const ProductsList = () => {
     fetchData();
   }, [location]);
 
-
   return (
     <section className="product-list">
-    
       <FilterPanel
-  filters={filters}
-  event={event}
-  category={category}
-  brand={brand}
-  handleSortChange={handleSortChange}
-  handleCheckboxChange={handleCheckboxChange}
-/>
+        filters={filters}
+        event={event}
+        category={category}
+        brand={brand}
+        handleSortChange={handleSortChange}
+        handleCheckboxChange={handleCheckboxChange}
+      />
       <div className="products">
         {loading ? (
           [...Array(10)].map((_, index) => (
             <div key={index} className="product-card">
               <div className="skeleton product-skeleton"></div>
               <div className="skeleton text-skeleton"></div>
-              <div className="skeleton text-skeleton" style={{ width: "60%" }}></div>
+              <div
+                className="skeleton text-skeleton"
+                style={{ width: "60%" }}
+              ></div>
             </div>
           ))
         ) : error ? (

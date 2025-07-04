@@ -55,7 +55,7 @@ const Wishlist = () => {
     }
   };
 
-   useEffect(() => {
+  useEffect(() => {
     if (!wishlist || !wishlist.items) return;
     const nullItems = wishlist.items.filter((item) => item.product === null);
     if (nullItems.length === 0) return;
@@ -96,7 +96,8 @@ const Wishlist = () => {
       </div>
     );
 
-    const validItems = wishlist?.items?.filter((item) => item.product !== null) || [];
+  const validItems =
+    wishlist?.items?.filter((item) => item.product !== null) || [];
 
   if (validItems.length === 0)
     return <h2 className="cart-container">Your wishlist is empty.</h2>;

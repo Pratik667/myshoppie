@@ -8,7 +8,7 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogActions from "@mui/material/DialogActions";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
-import { GoogleLogin } from '@react-oauth/google';
+import { GoogleLogin } from "@react-oauth/google";
 import axios from "axios"; // Import Axios
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
@@ -43,7 +43,7 @@ const Register = () => {
     return <Navigate to="/dashboard" />;
   }
 
-const handleGoogleLogin = async (credentialResponse, event) => {
+  const handleGoogleLogin = async (credentialResponse, event) => {
     if (event && event.preventDefault) event.preventDefault();
 
     setError("");
@@ -58,7 +58,7 @@ const handleGoogleLogin = async (credentialResponse, event) => {
           headers: {
             "Content-Type": "application/json",
           },
-        }
+        },
       );
       setAlertMsg(response.data.message);
       setOpen(true);
@@ -81,7 +81,6 @@ const handleGoogleLogin = async (credentialResponse, event) => {
       setLoading(false);
     }
   };
-
 
   // Handle login logic
   const handleLogin = async (e) => {
@@ -152,15 +151,15 @@ const handleGoogleLogin = async (credentialResponse, event) => {
             <button type="submit" className="login-btn" disabled={loading}>
               {loading ? "Registering..." : "Register"}
             </button>
-             <p className="separator">(or)</p>
-                      <GoogleLogin
-                        onSuccess={(credentialResponse) => {
-                          handleGoogleLogin(credentialResponse);
-                        }}
-                        onError={() => {
-                          console.log("Login Failed");
-                        }}
-                      />
+            <p className="separator">(or)</p>
+            <GoogleLogin
+              onSuccess={(credentialResponse) => {
+                handleGoogleLogin(credentialResponse);
+              }}
+              onError={() => {
+                console.log("Login Failed");
+              }}
+            />
             <div className="goto-link m-2 ml-0">
               Already an User? <Link to="/login">Login</Link>
             </div>

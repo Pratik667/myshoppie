@@ -76,15 +76,15 @@
 }
 
 .action-button button {
-    margin: 15px 15px 15px 0px;
-    padding: 10px 15px;
-    background: #634c9f;
+  margin: 15px 15px 15px 0px;
+  padding: 10px 15px;
+  background: #634c9f;
 }
 
-.product-left{
+.product-left {
   position: relative;
 }
-.product-left .badge{
+.product-left .badge {
   top: 10px;
   left: 10px;
 }

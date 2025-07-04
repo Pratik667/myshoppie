@@ -124,17 +124,17 @@ const ProductCard = ({ product }) => {
         setOpenSnack({ ...openSnack, opens: true });
       }
     } catch (error) {
-     if (error.response && error.response.status === 400) {
-      const errorMsg = error.response.data?.message || "";
-      if (errorMsg.includes("already in wishlist")) {
-        setAlertMsg("Product is already in your Wishlist.");
+      if (error.response && error.response.status === 400) {
+        const errorMsg = error.response.data?.message || "";
+        if (errorMsg.includes("already in wishlist")) {
+          setAlertMsg("Product is already in your Wishlist.");
+        } else {
+          setAlertMsg("Failed to add to Wishlist.");
+        }
       } else {
-        setAlertMsg("Failed to add to Wishlist.");
+        setAlertMsg("Error adding product to Wishlist.");
       }
-    } else {
-      setAlertMsg("Error adding product to Wishlist.");
-    }
-    setOpenSnack({ ...openSnack, opens: true });
+      setOpenSnack({ ...openSnack, opens: true });
     }
   };
 
@@ -151,7 +151,11 @@ const ProductCard = ({ product }) => {
             src={product.image}
             alt={product.name}
           />
-          {product.event ? <span className={`badge ${product.event}`}>{product.event}</span> : ''}
+          {product.event ? (
+            <span className={`badge ${product.event}`}>{product.event}</span>
+          ) : (
+            ""
+          )}
           <div className="icon-overlay">
             <ShoppingCartIcon
               className="action-icon"
@@ -180,7 +184,6 @@ const ProductCard = ({ product }) => {
         autoHideDuration={1200}
         className="productcard-snackbar"
       />
-
 
       <BootstrapDialog
         onClose={handleClose}

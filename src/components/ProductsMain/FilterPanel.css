@@ -29,11 +29,11 @@
   }
 }
 
-.accordian-mui{
+.accordian-mui {
   box-shadow: none !important;
 }
 
-.accordian-details{
-    overflow-y: auto;
-    max-height: 250px;
+.accordian-details {
+  overflow-y: auto;
+  max-height: 250px;
 }

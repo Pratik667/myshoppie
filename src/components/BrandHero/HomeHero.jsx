@@ -32,11 +32,14 @@ const HomeHero = ({ title, type, value }) => {
       <div className="home-product-list">
         {loading ? (
           [...Array(4)].map((_, index) => (
-          <div key={index} className="product-card">
-            <div className="skeleton product-skeleton"></div>
-            <div className="skeleton text-skeleton"></div>
-            <div className="skeleton text-skeleton" style={{ width: "60%" }}></div>
-          </div>
+            <div key={index} className="product-card">
+              <div className="skeleton product-skeleton"></div>
+              <div className="skeleton text-skeleton"></div>
+              <div
+                className="skeleton text-skeleton"
+                style={{ width: "60%" }}
+              ></div>
+            </div>
           ))
         ) : error ? (
           <p>{error}</p>

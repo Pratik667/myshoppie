@@ -16,11 +16,11 @@ import {
   useTheme,
   AccordionDetails,
   AccordionSummary,
-  Accordion
+  Accordion,
 } from "@mui/material";
 import FilterListIcon from "@mui/icons-material/FilterList";
-import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import "./FilterPanel.css";
 
 const capitalizeWords = (str) =>
@@ -47,7 +47,6 @@ const FilterPanel = ({
           aria-controls="sort-content"
           id="sort-header"
         >
-
           <Typography variant="h6" className="filter-title">
             Sort By Date
           </Typography>
@@ -66,7 +65,7 @@ const FilterPanel = ({
           </FormControl>
         </AccordionDetails>
       </Accordion>
-     
+
       <Accordion className="accordian-mui">
         <AccordionSummary
           expandIcon={<ArrowDownwardIcon />}
@@ -85,9 +84,7 @@ const FilterPanel = ({
                 control={
                   <Checkbox
                     checked={filters.event.has(eventData)}
-                    onChange={() =>
-                      handleCheckboxChange("event", eventData)
-                    }
+                    onChange={() => handleCheckboxChange("event", eventData)}
                     color="primary"
                   />
                 }
@@ -97,7 +94,7 @@ const FilterPanel = ({
           </FormGroup>
         </AccordionDetails>
       </Accordion>
-      
+
       <Accordion className="accordian-mui">
         <AccordionSummary
           expandIcon={<ArrowDownwardIcon />}
@@ -116,9 +113,7 @@ const FilterPanel = ({
                 control={
                   <Checkbox
                     checked={filters.category.has(cat)}
-                    onChange={() =>
-                      handleCheckboxChange("category", cat)
-                    }
+                    onChange={() => handleCheckboxChange("category", cat)}
                     color="primary"
                   />
                 }
@@ -128,7 +123,7 @@ const FilterPanel = ({
           </FormGroup>
         </AccordionDetails>
       </Accordion>
-     
+
       <Accordion className="accordian-mui">
         <AccordionSummary
           expandIcon={<ArrowDownwardIcon />}
@@ -147,9 +142,7 @@ const FilterPanel = ({
                 control={
                   <Checkbox
                     checked={filters.brand.has(brandData)}
-                    onChange={() =>
-                      handleCheckboxChange("brand", brandData)
-                    }
+                    onChange={() => handleCheckboxChange("brand", brandData)}
                     color="primary"
                   />
                 }
@@ -157,9 +150,9 @@ const FilterPanel = ({
               />
             ))}
           </FormGroup>
-        </AccordionDetails >
-      </Accordion >
-    </Box >
+        </AccordionDetails>
+      </Accordion>
+    </Box>
   );
 
   return (

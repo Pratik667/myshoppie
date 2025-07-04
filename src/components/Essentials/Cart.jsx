@@ -84,7 +84,7 @@ const Cart = () => {
     if (nullItems.length === 0) return;
 
     const { id: userId } = jwtDecode(token);
-    
+
     nullItems.forEach((item) => {
       axios
         .post(
@@ -148,9 +148,7 @@ const Cart = () => {
               </div>
               <DeleteIcon
                 className="remove-btn"
-                onClick={() =>
-                  removeItem(item.product._id, item.quantity - 1)
-                }
+                onClick={() => removeItem(item.product._id, item.quantity - 1)}
               />
             </div>
           </div>

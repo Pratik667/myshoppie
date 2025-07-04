@@ -4,7 +4,7 @@ import { lazy, Suspense } from "react";
 import PrivateRoute from "./components/Auth/PrivateRoute";
 import { Provider } from "react-redux";
 import store from "./components/GlobalStore/store";
-import { GoogleOAuthProvider } from '@react-oauth/google';
+import { GoogleOAuthProvider } from "@react-oauth/google";
 
 const Layout = lazy(() => import("./components/Layout"));
 const Home = lazy(() => import("./components/ProductsMain/Home"));
@@ -23,58 +23,57 @@ const Register = lazy(() => import("./components/Auth/Register"));
 
 function App() {
   return (
-      <GoogleOAuthProvider clientId="801300105604-m5a88ikeeetbue10lalfcp464iqcv53d.apps.googleusercontent.com">
-
-    <Provider store={store}>
-      <Router>
-        <Suspense
-          fallback={
-            <div className="loader-container">
-              <img
-                src="./assets/mainloader.gif"
-                alt="Loading..."
-                className="loader"
-              />
-            </div>
-          }
-        >
-          <Routes>
-            <Route path="/" element={<Layout />}>
-              <Route path="/" element={<Home />} />
-              <Route
-                path="/cart"
-                element={
-                  <PrivateRoute>
-                    <Cart />
-                  </PrivateRoute>
-                }
-              />
-              <Route path="/pdp" element={<ProductDetail />} />
-              <Route path="/products" element={<ProductsList />} />
-              <Route
-                path="/accounts"
-                element={
-                  <PrivateRoute>
-                    <Accounts />
-                  </PrivateRoute>
-                }
-              />
-              <Route
-                path="/wishlist"
-                element={
-                  <PrivateRoute>
-                    <Wishlist />
-                  </PrivateRoute>
-                }
-              />
-              <Route path="/mylocation" element={<SetLocation />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-            </Route>
-          </Routes>
-        </Suspense>
-      </Router>
-    </Provider>
+    <GoogleOAuthProvider clientId="801300105604-m5a88ikeeetbue10lalfcp464iqcv53d.apps.googleusercontent.com">
+      <Provider store={store}>
+        <Router>
+          <Suspense
+            fallback={
+              <div className="loader-container">
+                <img
+                  src="./assets/mainloader.gif"
+                  alt="Loading..."
+                  className="loader"
+                />
+              </div>
+            }
+          >
+            <Routes>
+              <Route path="/" element={<Layout />}>
+                <Route path="/" element={<Home />} />
+                <Route
+                  path="/cart"
+                  element={
+                    <PrivateRoute>
+                      <Cart />
+                    </PrivateRoute>
+                  }
+                />
+                <Route path="/pdp" element={<ProductDetail />} />
+                <Route path="/products" element={<ProductsList />} />
+                <Route
+                  path="/accounts"
+                  element={
+                    <PrivateRoute>
+                      <Accounts />
+                    </PrivateRoute>
+                  }
+                />
+                <Route
+                  path="/wishlist"
+                  element={
+                    <PrivateRoute>
+                      <Wishlist />
+                    </PrivateRoute>
+                  }
+                />
+                <Route path="/mylocation" element={<SetLocation />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+              </Route>
+            </Routes>
+          </Suspense>
+        </Router>
+      </Provider>
     </GoogleOAuthProvider>
   );
 }

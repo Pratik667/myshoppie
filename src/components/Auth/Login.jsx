@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate, Navigate, Link } from "react-router-dom";
 import axios from "axios"; // Import Axios
 import "./Login.css";
-import { GoogleLogin } from '@react-oauth/google';
+import { GoogleLogin } from "@react-oauth/google";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -29,7 +29,7 @@ const Login = () => {
           headers: {
             "Content-Type": "application/json",
           },
-        }
+        },
       );
 
       if (response.data.token) {
@@ -41,14 +41,12 @@ const Login = () => {
       } else {
         setError("Invalid credentials");
       }
-
     } catch (err) {
       setError(err.response.data.message);
     } finally {
       setLoading(false); // Stop loading
     }
   };
-
 
   // Handle login logic
   const handleLogin = async (e) => {
