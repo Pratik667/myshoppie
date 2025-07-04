@@ -158,6 +158,7 @@ const ProductDetail = () => {
             alt={product.name}
             className="product-image"
           />
+          {product.event ? <span className={`badge ${product.event}`}>{product.event}</span> : ''}
         </div>
 
         <div className="product-right">

@@ -80,3 +80,11 @@
     padding: 10px 15px;
     background: #634c9f;
 }
+
+.product-left{
+  position: relative;
+}
+.product-left .badge{
+  top: 10px;
+  left: 10px;
+}

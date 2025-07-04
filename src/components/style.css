@@ -12,7 +12,7 @@
   --text-color-grey: #6b7280;
   --badge-color: #dc2626;
   --badge-color-2: #ea580c;
-  --badge-color-3: linear-gradient(90deg, #dc2626, #ea580c);
+  --badge-color-3: linear-gradient(90deg, #5f61c0, #ea580c);
 }
 
 .secondary-nav .MuiToolbar-root {
@@ -219,7 +219,7 @@
     padding: 0 !important;
   }
 
-  .product-list>.products {
+  .product-list>.products, .home-product-list {
     grid-template-columns: repeat(2, 1fr);
     /* 2 columns on small screens */
     gap: 12px;
@@ -423,4 +423,25 @@
   font-size: 15px;
   background: var(--primary-color);
   color: var(--text-color-white);
+}
+
+ .badge {
+  position: absolute;
+   font-family: "Inter", sans-serif;
+   text-transform: capitalize;
+  top: 0px;
+  left: 0px;
+  background: var(--badge-color);
+  color: white;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 4px;
+  z-index: 1;
+}
+.badge.bestseller{
+  background: var(--badge-color-2);
+}
+.badge.newest{
+  background: var(--badge-color-3);
 }

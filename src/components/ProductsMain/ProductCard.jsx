@@ -151,6 +151,7 @@ const ProductCard = ({ product }) => {
             src={product.image}
             alt={product.name}
           />
+          {product.event ? <span className={`badge ${product.event}`}>{product.event}</span> : ''}
           <div className="icon-overlay">
             <ShoppingCartIcon
               className="action-icon"

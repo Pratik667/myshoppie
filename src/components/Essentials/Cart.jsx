@@ -84,7 +84,7 @@ const Cart = () => {
     if (nullItems.length === 0) return;
 
     const { id: userId } = jwtDecode(token);
-
+    
     nullItems.forEach((item) => {
       axios
         .post(
