@@ -62,8 +62,7 @@ const ProductsList = () => {
       const brand = queryParams.get("brand");
       const event = queryParams.get("event");
 
-      const apiBaseUrl =
-        `${import.meta.env.VITE_DOMAIN_URL}/api/products`;
+      const apiBaseUrl = `${import.meta.env.VITE_DOMAIN_URL}/api/products`;
       const apiUrl = brand
         ? `${apiBaseUrl}/brand/${brand}`
         : category

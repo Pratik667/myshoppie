@@ -1,10 +1,10 @@
-import { Tabs, Tab, Box } from '@mui/material';
-import PropTypes from 'prop-types';
+import { Tabs, Tab, Box } from "@mui/material";
+import PropTypes from "prop-types";
 
 function a11yProps(index) {
   return {
     id: `vertical-tab-${index}`,
-    'aria-controls': `vertical-tabpanel-${index}`,
+    "aria-controls": `vertical-tabpanel-${index}`,
   };
 }
 
@@ -15,7 +15,7 @@ const AccountsSidebar = ({ value, handleChange }) => {
         width: 240,
         mt: 8,
         borderRight: 1,
-        borderColor: 'divider',
+        borderColor: "divider",
       }}
     >
       <Tabs
