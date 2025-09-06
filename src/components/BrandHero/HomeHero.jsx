@@ -14,7 +14,7 @@ const HomeHero = ({ title, type, value }) => {
     setLoading(true);
     setError(null);
     try {
-      const apiUrl = `https://ukkh4uvf1d.execute-api.eu-north-1.amazonaws.com/api/products/${type}/${value}`;
+      const apiUrl = `${import.meta.env.VITE_DOMAIN_URL}/api/products/${type}/${value}`;
       const response = await axios.get(apiUrl);
       setProducts(response.data);
     } catch (error) {

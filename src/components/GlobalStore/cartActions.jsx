@@ -10,7 +10,7 @@ export const fetchCart = () => {
       const { id: userId } = jwtDecode(token);
 
       const response = await axios.get(
-        `https://ukkh4uvf1d.execute-api.eu-north-1.amazonaws.com/api/cart/${userId}`,
+        `${import.meta.env.VITE_DOMAIN_URL}/api/cart/${userId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

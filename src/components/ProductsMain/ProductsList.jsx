@@ -63,7 +63,7 @@ const ProductsList = () => {
       const event = queryParams.get("event");
 
       const apiBaseUrl =
-        "https://ukkh4uvf1d.execute-api.eu-north-1.amazonaws.com/api/products";
+        `${import.meta.env.VITE_DOMAIN_URL}/api/products`;
       const apiUrl = brand
         ? `${apiBaseUrl}/brand/${brand}`
         : category

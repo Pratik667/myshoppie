@@ -33,8 +33,7 @@ const ProductCard = ({ product }) => {
     horizontal: "right",
   });
 
-  const { vertical, horizontal, opens } = openSnack;
-
+  const { opens } = openSnack;
   // const handleClickOpen = () => {
   //   setOpen(true);
   // };
@@ -60,9 +59,8 @@ const ProductCard = ({ product }) => {
     try {
       const decoded = jwtDecode(token);
       const userId = decoded.id; // adjust based on your JWT structure
-
       const response = await axios.post(
-        "https://ukkh4uvf1d.execute-api.eu-north-1.amazonaws.com/api/cart/add",
+        `${import.meta.env.VITE_DOMAIN_URL}/api/cart/add`,
         {
           userId,
           productId: product._id,
@@ -83,7 +81,7 @@ const ProductCard = ({ product }) => {
         setOpenSnack({ ...openSnack, opens: true });
       }
     } catch (error) {
-      // console.error("Add to cart error:", error);
+      console.error("Add to cart error:", error);
       setAlertMsg("Error adding product to cart");
       setOpenSnack({ ...openSnack, opens: true });
     }
@@ -103,7 +101,7 @@ const ProductCard = ({ product }) => {
       const decoded = jwtDecode(token);
       const userId = decoded.id; // adjust based on your JWT structure
       const response = await axios.post(
-        "https://ukkh4uvf1d.execute-api.eu-north-1.amazonaws.com/api/wishlist/add",
+        `${import.meta.env.VITE_DOMAIN_URL}/api/wishlist/add`,
         {
           userId,
           productId: product._id,

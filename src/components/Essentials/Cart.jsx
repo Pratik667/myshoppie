@@ -19,7 +19,7 @@ const Cart = () => {
   const fetchCart = async (userId) => {
     try {
       const response = await axios.get(
-        `https://ukkh4uvf1d.execute-api.eu-north-1.amazonaws.com/api/cart/${userId}`,
+        `${import.meta.env.VITE_DOMAIN_URL}/api/cart/${userId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -38,7 +38,7 @@ const Cart = () => {
     try {
       const { id: userId } = jwtDecode(token);
       await axios.post(
-        `https://ukkh4uvf1d.execute-api.eu-north-1.amazonaws.com/api/cart/add`,
+        `${import.meta.env.VITE_DOMAIN_URL}/api/cart/add`,
         {
           userId,
           productId,
@@ -60,7 +60,7 @@ const Cart = () => {
     try {
       const { id: userId } = jwtDecode(token);
       await axios.post(
-        `https://ukkh4uvf1d.execute-api.eu-north-1.amazonaws.com/api/cart/remove`,
+        `${import.meta.env.VITE_DOMAIN_URL}/api/cart/remove`,
         {
           userId,
           productId,
@@ -88,7 +88,7 @@ const Cart = () => {
     nullItems.forEach((item) => {
       axios
         .post(
-          `https://ukkh4uvf1d.execute-api.eu-north-1.amazonaws.com/api/cart/remove`,
+          `${import.meta.env.VITE_DOMAIN_URL}/api/cart/remove`,
           {
             userId,
             productId: item._id, // assuming item._id is the reference for cart entry

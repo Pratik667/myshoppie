@@ -74,7 +74,7 @@ const ProductDetail = () => {
       const userId = decoded.id; // adjust based on your JWT structure
 
       const response = await axios.post(
-        "https://ukkh4uvf1d.execute-api.eu-north-1.amazonaws.com/api/cart/add",
+        `${import.meta.env.VITE_DOMAIN_URL}/api/cart/add`,
         {
           userId,
           productId: product._id,
@@ -115,7 +115,7 @@ const ProductDetail = () => {
       const decoded = jwtDecode(token);
       const userId = decoded.id; // adjust based on your JWT structure
       const response = await axios.post(
-        "https://ukkh4uvf1d.execute-api.eu-north-1.amazonaws.com/api/wishlist/add",
+        `${import.meta.env.VITE_DOMAIN_URL}/api/wishlist/add`,
         {
           userId,
           productId: product._id,

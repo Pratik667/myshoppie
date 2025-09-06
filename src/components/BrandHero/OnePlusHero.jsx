@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "../style.css";
 import oneplusImage from "../../assets/Jackson-Wang-removebg-preview.png";
 import axios from "axios";
@@ -10,7 +10,7 @@ const OnePlusHero = () => {
 
   const fetchData = async () => {
     const response = await axios.get(
-      `https://ukkh4uvf1d.execute-api.eu-north-1.amazonaws.com/api/products/680a6ec2a4ac4b8a9de862b7`,
+      `${import.meta.env.VITE_DOMAIN_URL}/api/products/680a6ec2a4ac4b8a9de862b7`,
     );
     setProductData(response.data);
   };

@@ -52,7 +52,7 @@ const Register = () => {
 
     try {
       const response = await axios.post(
-        "https://ukkh4uvf1d.execute-api.eu-north-1.amazonaws.com/api/users/register-sso",
+        `${import.meta.env.VITE_DOMAIN_URL}/api/users/register-sso`,
         { credential: credentialResponse.credential },
         {
           headers: {
@@ -92,7 +92,7 @@ const Register = () => {
     let response;
     try {
       response = await axios.post(
-        "https://ukkh4uvf1d.execute-api.eu-north-1.amazonaws.com/api/users/register",
+        `${import.meta.env.VITE_DOMAIN_URL}/api/users/register`,
         { name, email, password },
         { headers: { "Content-Type": "application/json" } },
       );

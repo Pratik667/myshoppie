@@ -23,7 +23,7 @@ const Login = () => {
     setLoading(true);
     try {
       const response = await axios.post(
-        "https://ukkh4uvf1d.execute-api.eu-north-1.amazonaws.com/api/users/login-sso",
+        `${import.meta.env.VITE_DOMAIN_URL}/api/users/login-sso`,
         { credential: credentialResponse.credential },
         {
           headers: {
@@ -59,7 +59,7 @@ const Login = () => {
     try {
       // Make the login request using Axios
       const response = await axios.post(
-        "https://ukkh4uvf1d.execute-api.eu-north-1.amazonaws.com/api/users/login",
+        `${import.meta.env.VITE_DOMAIN_URL}/api/users/login`,
         { email, password },
         { headers: { "Content-Type": "application/json" } },
       );

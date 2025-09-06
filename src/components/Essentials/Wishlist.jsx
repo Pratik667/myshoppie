@@ -19,7 +19,7 @@ const Wishlist = () => {
   const fetchWishlist = async (userId) => {
     try {
       const response = await axios.get(
-        `https://ukkh4uvf1d.execute-api.eu-north-1.amazonaws.com/api/wishlist/${userId}`,
+        `${import.meta.env.VITE_DOMAIN_URL}/api/wishlist/${userId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -38,7 +38,7 @@ const Wishlist = () => {
     try {
       const { id: userId } = jwtDecode(token);
       await axios.post(
-        `https://ukkh4uvf1d.execute-api.eu-north-1.amazonaws.com/api/wishlist/remove`,
+        `${import.meta.env.VITE_DOMAIN_URL}/api/wishlist/remove`,
         {
           userId,
           productId,
@@ -65,7 +65,7 @@ const Wishlist = () => {
     nullItems.forEach((item) => {
       axios
         .post(
-          `https://ukkh4uvf1d.execute-api.eu-north-1.amazonaws.com/api/wishlist/remove`,
+          `${import.meta.env.VITE_DOMAIN_URL}/api/wishlist/remove`,
           {
             userId,
             productId: item._id, // assuming item._id is the reference for cart entry
