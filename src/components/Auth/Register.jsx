@@ -27,7 +27,7 @@ const Register = () => {
   const [loading, setLoading] = useState(false); // Loading state
   const [error, setError] = useState(""); // Error state
   const [open, setOpen] = useState(false);
-  const [alertMsg, setAlertMsg] = useState("Welcome to JinStore");
+  const [alertMsg, setAlertMsg] = useState("Welcome to FableCart");
 
   // const handleClickOpen = () => {
   //   setOpen(true);

@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 
 const AccountsTabPanel = ({ children, value, index, ...other }) => {
   return (
@@ -10,11 +10,7 @@ const AccountsTabPanel = ({ children, value, index, ...other }) => {
       aria-labelledby={`vertical-tab-${index}`}
       {...other}
     >
-      {value === index && (
-        <Box sx={{ p: 3 }}>
-          <Typography variant="body1">{children}</Typography>
-        </Box>
-      )}
+      {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
     </div>
   );
 };
