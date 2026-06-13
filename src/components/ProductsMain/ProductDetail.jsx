@@ -27,7 +27,7 @@ const ProductDetail = () => {
   const location = useLocation();
   const [product, setProduct] = useState(null);
   const [open, setOpen] = useState(false);
-  const [alertMsg, setAlertMsg] = useState("Welcome to JinStore");
+  const [alertMsg, setAlertMsg] = useState("Welcome to FableCart");
   const [openSnack, setOpenSnack] = useState({
     opens: false,
     vertical: "bottom",

@@ -26,7 +26,7 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
 
 const ProductCard = ({ product }) => {
   const [open, setOpen] = useState(false);
-  const [alertMsg, setAlertMsg] = useState("Welcome to JinStore");
+  const [alertMsg, setAlertMsg] = useState("Welcome to FableCart");
   const [openSnack, setOpenSnack] = useState({
     opens: false,
     vertical: "bottom",

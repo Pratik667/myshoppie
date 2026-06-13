@@ -1,4 +1,5 @@
-import { Tabs, Tab, Box } from "@mui/material";
+import { Tabs, Tab, Box, useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 import PropTypes from "prop-types";
 
 function a11yProps(index) {
@@ -9,21 +10,28 @@ function a11yProps(index) {
 }
 
 const AccountsSidebar = ({ value, handleChange }) => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
   return (
     <Box
       sx={{
-        width: 240,
-        mt: 8,
-        borderRight: 1,
+        width: { xs: "100%", md: 240 },
+        mt: { xs: 0, md: 8 },
+        borderRight: { xs: 0, md: 1 },
+        borderBottom: { xs: 1, md: 0 },
         borderColor: "divider",
       }}
     >
       <Tabs
-        orientation="vertical"
+        orientation={isMobile ? "horizontal" : "vertical"}
         variant="scrollable"
+        scrollButtons
+        allowScrollButtonsMobile
         value={value}
         onChange={handleChange}
         aria-label="Sidebar Tabs"
+        centered={isMobile}
       >
         <Tab label="Profile" {...a11yProps(0)} />
         <Tab label="Billing" {...a11yProps(1)} />
