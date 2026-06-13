@@ -193,7 +193,12 @@ const Accounts = () => {
                 </Box>
               </Stack>
 
-              <Stack direction="row" spacing={1} flexWrap="wrap" alignItems="center">
+              <Stack
+                direction="row"
+                spacing={1}
+                flexWrap="wrap"
+                alignItems="center"
+              >
                 <Chip
                   label={profile?.role ? `${profile.role}` : "Guest"}
                   color="primary"
@@ -213,88 +218,97 @@ const Accounts = () => {
             </Stack>
 
             {isEditing && (
-              <Box component="form" noValidate onSubmit={handleUpdate} sx={{ mt: 3 }}>
+              <Box
+                component="form"
+                noValidate
+                onSubmit={handleUpdate}
+                sx={{ mt: 3 }}
+              >
                 <Typography variant="subtitle1" sx={{ mb: 2 }}>
                   Update your details
                 </Typography>
 
-              <Grid container spacing={2}>
-                <Grid item xs={12} sm={6}>
-                  <TextField
-                    fullWidth
-                    label="Email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleFormChange}
-                    required
-                  />
+                <Grid container spacing={2}>
+                  <Grid item xs={12} sm={6}>
+                    <TextField
+                      fullWidth
+                      label="Email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleFormChange}
+                      required
+                    />
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <TextField
+                      fullWidth
+                      label="Phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleFormChange}
+                      required
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <TextField
+                      fullWidth
+                      label="Address"
+                      name="address"
+                      value={formData.address}
+                      onChange={handleFormChange}
+                      multiline
+                      rows={2}
+                      required
+                    />
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <TextField
+                      fullWidth
+                      label="State"
+                      name="state"
+                      value={formData.state}
+                      onChange={handleFormChange}
+                      required
+                    />
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <TextField
+                      fullWidth
+                      label="Zip Code"
+                      name="zipcode"
+                      value={formData.zipcode}
+                      onChange={handleFormChange}
+                      required
+                    />
+                  </Grid>
                 </Grid>
-                <Grid item xs={12} sm={6}>
-                  <TextField
-                    fullWidth
-                    label="Phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleFormChange}
-                    required
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <TextField
-                    fullWidth
-                    label="Address"
-                    name="address"
-                    value={formData.address}
-                    onChange={handleFormChange}
-                    multiline
-                    rows={2}
-                    required
-                  />
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                  <TextField
-                    fullWidth
-                    label="State"
-                    name="state"
-                    value={formData.state}
-                    onChange={handleFormChange}
-                    required
-                  />
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                  <TextField
-                    fullWidth
-                    label="Zip Code"
-                    name="zipcode"
-                    value={formData.zipcode}
-                    onChange={handleFormChange}
-                    required
-                  />
-                </Grid>
-              </Grid>
 
-              <Stack
-                direction={{ xs: "column", sm: "row" }}
-                spacing={2}
-                alignItems="center"
-                sx={{ mt: 3 }}
-              >
-                <Button
-                  type="submit"
-                  variant="contained"
-                  disabled={isUpdating}
+                <Stack
+                  direction={{ xs: "column", sm: "row" }}
+                  spacing={2}
+                  alignItems="center"
+                  sx={{ mt: 3 }}
                 >
-                  {isUpdating ? "Saving…" : "Save changes"}
-                </Button>
-                {updateMessage && (
-                  <Typography
-                    color={updateMessage.includes("success") ? "success.main" : "error"}
+                  <Button
+                    type="submit"
+                    variant="contained"
+                    disabled={isUpdating}
                   >
-                    {updateMessage}
-                  </Typography>
-                )}
-              </Stack>
-            </Box>
+                    {isUpdating ? "Saving…" : "Save changes"}
+                  </Button>
+                  {updateMessage && (
+                    <Typography
+                      color={
+                        updateMessage.includes("success")
+                          ? "success.main"
+                          : "error"
+                      }
+                    >
+                      {updateMessage}
+                    </Typography>
+                  )}
+                </Stack>
+              </Box>
             )}
 
             {loading ? (
@@ -313,7 +327,9 @@ const Accounts = () => {
                 <Grid container spacing={2} className="account-info-grid">
                   <Grid item xs={12} sm={6}>
                     <Box className="info-item">
-                      <Typography className="info-item-label">Employee ID</Typography>
+                      <Typography className="info-item-label">
+                        Employee ID
+                      </Typography>
                       <Typography className="info-item-value">
                         {profile?.eid ?? "—"}
                       </Typography>
@@ -331,7 +347,9 @@ const Accounts = () => {
 
                   <Grid item xs={12} sm={6}>
                     <Box className="info-item">
-                      <Typography className="info-item-label">Address</Typography>
+                      <Typography className="info-item-label">
+                        Address
+                      </Typography>
                       <Typography className="info-item-value">
                         {profile?.address || "—"}
                       </Typography>
@@ -349,7 +367,9 @@ const Accounts = () => {
 
                   <Grid item xs={12} sm={6}>
                     <Box className="info-item">
-                      <Typography className="info-item-label">Zip Code</Typography>
+                      <Typography className="info-item-label">
+                        Zip Code
+                      </Typography>
                       <Typography className="info-item-value">
                         {profile?.zipcode || "—"}
                       </Typography>
@@ -358,7 +378,9 @@ const Accounts = () => {
 
                   <Grid item xs={12} sm={6}>
                     <Box className="info-item">
-                      <Typography className="info-item-label">Account created</Typography>
+                      <Typography className="info-item-label">
+                        Account created
+                      </Typography>
                       <Typography className="info-item-value">
                         {formatDate(profile?.createdAt)}
                       </Typography>
@@ -367,7 +389,9 @@ const Accounts = () => {
 
                   <Grid item xs={12} sm={6}>
                     <Box className="info-item">
-                      <Typography className="info-item-label">Last updated</Typography>
+                      <Typography className="info-item-label">
+                        Last updated
+                      </Typography>
                       <Typography className="info-item-value">
                         {formatDate(profile?.updatedAt)}
                       </Typography>
@@ -385,7 +409,8 @@ const Accounts = () => {
               Billing overview
             </Typography>
             <Typography color="text.secondary">
-              Your billing section will show active subscriptions, invoices, and payment methods once available.
+              Your billing section will show active subscriptions, invoices, and
+              payment methods once available.
             </Typography>
           </Paper>
         </AccountsTabPanel>
@@ -396,7 +421,8 @@ const Accounts = () => {
               Security settings
             </Typography>
             <Typography color="text.secondary">
-              Manage your password, 2-factor authentication, and sign-in activity from here.
+              Manage your password, 2-factor authentication, and sign-in
+              activity from here.
             </Typography>
           </Paper>
         </AccountsTabPanel>
@@ -407,7 +433,8 @@ const Accounts = () => {
               Notification preferences
             </Typography>
             <Typography color="text.secondary">
-              Enable or disable email and push alerts for promotions, account updates, and security events.
+              Enable or disable email and push alerts for promotions, account
+              updates, and security events.
             </Typography>
           </Paper>
         </AccountsTabPanel>
@@ -418,7 +445,8 @@ const Accounts = () => {
               Integrations
             </Typography>
             <Typography color="text.secondary">
-              Connect third-party apps and services to extend your account features.
+              Connect third-party apps and services to extend your account
+              features.
             </Typography>
           </Paper>
         </AccountsTabPanel>
@@ -429,7 +457,8 @@ const Accounts = () => {
               Preferences
             </Typography>
             <Typography color="text.secondary">
-              Set your default currency, language, and display preferences for a personalized experience.
+              Set your default currency, language, and display preferences for a
+              personalized experience.
             </Typography>
           </Paper>
         </AccountsTabPanel>
